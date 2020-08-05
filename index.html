@@ -1,17 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Block Share</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top container">
+    <span class="navbar-brand">Block Share</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in logout-button' role="button">Logout</a>
+        </li>
+        <li>
+          <div class='dropdown d-none d-lg-block'>
+            <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span class='navbar-toggler-icon' id='account-span'></span>
+            </a>
+            <ul class='dropdown-menu'>
+              <li class="nav-item">
+                <a class='nav-link logged-in change-password change-password-button' role="button">Change
+                  Password</a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item">
+                <a class='nav-link logged-in logout-button' role="button">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Jumbo banner -->
+  <div class="container">
+    <div class="jumbotron jumbotron-fluid text-center">
+      <h1 class=''>Block Share</h1>
+      <!-- <br> -->
+      <p class='' id='message'></p>
+    </div>
+  </div>
+
+  <!-- Signup view -->
+  <div class='signup-view container'>
+    <form id='signup'>
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" class="form-control" name="credentials[email]"
+          placeholder="Please enter your email address">
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" class="form-control" name="credentials[password]"
+          placeholder="Please enter your password">
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Confirm Password</label>
+        <input type="password" class="form-control" name="credentials[password_confirmation]"
+          placeholder="Please re-enter your password">
+      </div>
+      <button type="submit" class="btn btn-primary">Sign up!</button>
+      <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
+    </form>
+  </div>
+
+  <!-- Signin view -->
+  <div class='signin-view container'>
+    <form id='signin'>
+      <div class="form-group">
+        <label for="signin-email">Email</label>
+        <input type="text" class="form-control" name="credentials[email]" placeholder="Please enter your email address">
+      </div>
+      <div class="form-group">
+        <label for="signin-password">Password</label>
+        <input type="password" class="form-control" name="credentials[password]"
+          placeholder="Please enter your password">
+      </div>
+      <button type="submit" class="btn btn-primary">Sign in!</button>
+      <a class="btn btn-sm btn-outline-info" id='signup-button' role="button">Sign up</a>
+    </form>
+  </div>
+
+  <!-- Change password view -->
+  <div class='change-password-view container'>
+    <form id='change-password'>
+      <div class="form-group">
+        <label for="old-password">Old Password</label>
+        <input type="password" class="form-control" name="passwords[old]" placeholder="Please enter your old password">
+      </div>
+      <div class="form-group">
+        <label for="new-password">New Password</label>
+        <input type="password" class="form-control" name="passwords[new]" placeholder="Please enter your new password">
+      </div>
+      <button type="submit" class="btn btn-primary">Change password</button>
+      <a class="btn btn-danger" id='cancel-change-button' role="button">Cancel</a>
+    </form>
+  </div>
+</body>
+
 </html>
