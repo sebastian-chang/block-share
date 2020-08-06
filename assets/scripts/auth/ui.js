@@ -1,4 +1,5 @@
 const store = require('../store')
+const videoGames = require('../video-games/events')
 
 // Sign up and sign in functions
 const signUpSuccess = function () {
@@ -13,8 +14,8 @@ const signUpFailure = function () {
 const signInSuccess = function (response) {
     $('#message').text('Successfully signed in!').removeClass('error')
     store.user = response.user
-    // gameEvents.onGetGames()
-    $('.logged-in').show()
+    videoGames.onShowAllGames()
+    $('.logged-in, .video-game-display').show()
     $('.signin-view').hide()
     $('#signin').trigger('reset')
 }
@@ -45,6 +46,7 @@ const logoutFailure = function () {
 const changePasswordSuccess = function () {
     $('#message').text('Password successfully changed!').removeClass('error')
     $('.change-password-view').hide()
+    $('.change-password-button').show()
     $('#change-password').trigger('reset')
 }
 const changePasswordFailure = function () {

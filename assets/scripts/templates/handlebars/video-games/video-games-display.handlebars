@@ -1,0 +1,20 @@
+{{#each videoGames as |videoGame|}}
+{{log videoGame.id}}
+<section class='video-game-section' data-id="{{videoGame.id}}">
+    <h6>Title:</h6>
+    <h3>
+        {{limit videoGame.title 15}}
+    </h3>
+    <h6>Title:</h6>
+    <p>
+        {{#if videoGame.title}}
+        {{videoGame.platform}}
+        {{else}}
+        No author provided.
+        {{/if}}
+    </p>
+    {{!-- <button class="deleteBookButton btn btn-outline-danger" data-id="{{videoGame.id}}">Delete Book!</button> --}}
+    {{!-- {{> partial}} --}}
+</section>
+
+{{/each}}

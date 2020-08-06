@@ -1,0 +1,17 @@
+{{log videoGame}}
+<section class='video-game-details' data-id="{{videoGame.id}}">
+    <h6>Title:</h6>
+    <h3>
+        {{limit videoGame.title 15}}
+    </h3>
+    <h6>Title:</h6>
+    <p>
+        {{#if videoGame.title}}
+        {{videoGame.platform}}
+        {{else}}
+        No author provided.
+        {{/if}}
+    </p>
+    <button id='delete-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
+    {{!-- {{> partial}} --}}
+</section>
