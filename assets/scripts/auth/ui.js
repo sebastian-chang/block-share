@@ -36,7 +36,9 @@ const signInSwitch = function () {
 const logoutSuccess = function () {
     $('#message').text('Successfully logged out!').removeClass('error')
     $('.signin-view').show()
-    $('.signup-view, .logged-in, .change-password-view').hide()
+    $('.signup-view, .logged-in, .change-password-view, .video-game-display, \
+    .update-video-game-view, .create-video-game-view').hide()
+    $('.video-game-view').empty()
 }
 const logoutFailure = function () {
     $('#message').text('Failed to logout.').addClass('error')

@@ -17,6 +17,11 @@ const onDetailVideoGame = function (event) {
         .then(ui.videoGameDetailsSuccess)
         .catch(ui.videoGameDetailsFailure)
 }
+// Leave detail video game view.  Re show all video game listings
+const onCancelDetailVideoGame = function (event) {
+    event.preventDefault()
+    ui.cancelDetailVideoGame()
+}
 
 // Create new video game functions
 // Switch to the new video game form
@@ -34,6 +39,22 @@ const onCreateVideoGame = function (event) {
         .catch(ui.createVideoGameFailure)
 }
 
+// Create new video game functions
+// Switch to the new video game form
+const onUpdateGameForm = function (event) {
+    event.preventDefault()
+    ui.showUpdateGameForm()
+}
+// Update a given video game listing
+const onUpdateVideoGame = function (event) {
+    event.preventDefault()
+    const formData = getFormFields(event.target)
+    console.log('This is the form date for updating a video game listing ',formData)
+    api.updateGame(formData)
+        .then(ui.updateVideoGameSuccess)
+        .catch(ui.updateVideoGameFailure)
+}
+
 // Delete video game
 const onDeleteVideoGame = function (event) {
     event.preventDefault()
@@ -47,6 +68,9 @@ module.exports = {
     onShowAllGames,
     onCreateGameForm,
     onCreateVideoGame,
+    onUpdateGameForm,
+    onUpdateVideoGame,
     onDetailVideoGame,
+    onCancelDetailVideoGame,
     onDeleteVideoGame,
 }

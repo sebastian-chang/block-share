@@ -31,9 +31,13 @@ $(() => {
   $('#cancel-change-button').on('click', authEvents.onChangePasswordCancel) // Cancels out of change password screen
 
   // Video game event listeners
-  $('.new-game-button').on('click', videoGameEvents.onCreateGameForm)
+  $('.new-game-button').on('click', videoGameEvents.onCreateGameForm) // Changes to create game listing form
   $('.get-games-button').on('click', videoGameEvents.onShowAllGames)
   $('#create-video-game').on('submit', videoGameEvents.onCreateVideoGame)
+  $('#update-video-game').on('submit', videoGameEvents.onUpdateVideoGame)
   $('.video-game-view').on('click', '.video-game-section', videoGameEvents.onDetailVideoGame)
   $('.video-game-view').on('click', '#delete-video-game', videoGameEvents.onDeleteVideoGame)
+  $('.video-game-view').on('click', '#cancel-video-game', videoGameEvents.onCancelDetailVideoGame)
+  $('.video-game-view').on('click', '#update-game-button', videoGameEvents.onUpdateGameForm) // Changes to update game listing
+  // $('.video-game-view').on('click', '#update-video-game', videoGameEvents.onUpdateVideoGame)
 })

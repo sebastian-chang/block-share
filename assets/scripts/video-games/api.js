@@ -34,6 +34,20 @@ const createGame = function (formData) {
     })
 }
 
+// Update new listing of a video game
+const updateGame = function (formData) {
+    const videoGameID = store.currentGame.id
+    console.log(videoGameID)
+    return $.ajax({
+        url: config.apiUrl + '/video-games/' + videoGameID,
+        method: 'PATCH',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token,
+        },
+        data: formData
+    })
+}
+
 // Delete a video game listing
 const deleteGame = function (videoGameID) {
     return $.ajax({
@@ -49,5 +63,6 @@ module.exports = {
     showAllGames,
     getGameDetails,
     createGame,
+    updateGame,
     deleteGame,
 }

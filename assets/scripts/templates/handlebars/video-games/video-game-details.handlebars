@@ -2,16 +2,54 @@
 <section class='video-game-details' data-id="{{videoGame.id}}">
     <h6>Title:</h6>
     <h3>
-        {{limit videoGame.title 15}}
+        {{videoGame.title}}
     </h3>
-    <h6>Title:</h6>
+    <h6>Description:</h6>
     <p>
-        {{#if videoGame.title}}
-        {{videoGame.platform}}
+        {{#if videoGame.description}}
+        {{videoGame.description}}
         {{else}}
-        No author provided.
+        Please enter a description for the game
         {{/if}}
     </p>
-    <button id='delete-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
+    <h6>Studio:</h6>
+    <p>
+        {{videoGame.studio}}
+    </p>
+    <h6>Rating:</h6>
+    <p>
+        {{videoGame.ESRB}}
+    </p>
+    <h6>Platform:</h6>
+    <p>
+        {{videoGame.platform}}
+    </p>
+    <h6>Owner:</h6>
+    <p>
+        {{#if videoGame.owner.hasFullName}}
+        {{videoGame.owner.fullName}}
+        {{else}}
+        {{videoGame.owner.userName}}
+        {{/if}}
+    </p>
+    <p>
+        {{!-- This is another test
+        {{#ifEquals videoGame.owner.token 'test' }}
+        {{videoGame.owner.fullName}}
+        {{else}}
+        {{videoGame.owner.userName}}
+        {{/if}} --}}
+    </p>
+    <h6>Available:</h6>
+    <p>
+        {{#if videoGame.isAvailable}}
+        <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
+        {{else}}
+        Someone is borrowing it
+        {{/if}}
+    </p>
+    <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
+    <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
+    <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
     {{!-- {{> partial}} --}}
 </section>

@@ -19,6 +19,17 @@
             placeholder="Please enter a URL of an image of the video game">
     </div>
     <div class="form-group">
+        <label for="video-game-rating"></label>
+        <select placeholder="Rating" name="videoGame[rating]" required>
+            <option disabled hidden selected value=''>Rating</option>
+            <option value='e'>Everyone</option>
+            <option value='t'>Teen</option>
+            <option value='m'>Mature</option>
+            <option value='a'>Adult only</option>
+            <option value='rp'>Rating Pending</option>
+        </select>
+    </div>
+    <div class="form-group">
         <label for="video-game-platform"></label>
         <select placeholder="Platform" name="videoGame[platform]" required>
             <option disabled hidden selected value=''>Platform</option>
