@@ -11,6 +11,19 @@ const showAllGames = function () {
         },
     })
 }
+// Show all video games available to be borrowed
+const showAllGamesForUser = function () {
+    return $.ajax({
+        url: config.apiUrl + '/video-games-user',
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token,
+        },
+        data: {
+            user: store.user.id
+        }
+    })
+}
 // Show details of selected video game
 const getGameDetails = function (videoGameID) {
     return $.ajax({
@@ -61,6 +74,7 @@ const deleteGame = function (videoGameID) {
 
 module.exports = {
     showAllGames,
+    showAllGamesForUser,
     getGameDetails,
     createGame,
     updateGame,

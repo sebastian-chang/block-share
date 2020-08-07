@@ -27,6 +27,9 @@
           <a class='nav-link logged-in change-password change-password-button' role="button">User settings</a>
         </li>
         <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in new-game-button' role="button">Create new game</a>
+        </li>
+        <li class="nav-item d-lg-none">
           <a class='nav-link logged-in logout-button' role="button">Logout</a>
         </li>
         <li>
@@ -38,6 +41,9 @@
             <ul class='dropdown-menu'>
               <li class="nav-item">
                 <a class='nav-link logged-in change-password change-password-button' role="button">User settings</a>
+              </li>
+              <li class="nav-item">
+                <a class='nav-link logged-in new-game-button' role="button">Create new game</a>
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-item">
@@ -98,8 +104,29 @@
     </form>
   </div>
 
-  <!-- Change password view -->
-  <div class='change-password-view container'>
+  <!-- User settings view -->
+  <div class='user-settings-view container'>
+    <form id='update-user'>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="user[email]" placeholder="Please enter your email">
+      </div>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" class="form-control" name="user[firstName]" placeholder="Please enter your first name">
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" class="form-control" name="user[lastName]" placeholder="Please enter your last name">
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="user[userName]" placeholder="Please enter your first name">
+      </div>
+      <button type="submit" class="btn btn-primary">Update user</button>
+      <a class="btn btn-danger" id='cancel-change-button' role="button">Cancel</a>
+    </form>
+    <br>
     <form id='change-password'>
       <div class="form-group">
         <label for="old-password">Old Password</label>
@@ -116,7 +143,7 @@
 
   <!-- Video games view -->
   <div class="video-game-display">
-    <button type='submit' class='btn btn-primary new-game-button'>Create new game</button>
+    <!-- <button type='submit' class='btn btn-primary new-game-button'>Create new game</button> -->
     <!-- <button type='submit' class='btn btn-primary get-games-button'>Refresh Listings</button> -->
     <div class='video-game-view'></div>
   </div>

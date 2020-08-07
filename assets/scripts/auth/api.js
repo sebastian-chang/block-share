@@ -30,6 +30,17 @@ const logout = function () {
     })
 }
 
+// Updates user info
+const updateUser = function (formData) {
+    return $.ajax({
+        headers: {
+            Authorization: 'Bearer ' + store.user.token,
+        },
+        url: config.apiUrl + '/update-user',
+        method: 'PATCH',
+        data: formData,
+    })
+}
 // Changes an users password
 const changePassword = function (formData) {
     return $.ajax({
@@ -46,5 +57,6 @@ module.exports = {
     signUp,
     signIn,
     logout,
+    updateUser,
     changePassword,
 }

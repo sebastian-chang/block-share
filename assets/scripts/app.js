@@ -13,7 +13,7 @@ $(() => {
   // your JS code goes here
 
   // Hide views
-  $('.signup-view, .logged-in, .change-password-view, .video-game-display, .create-video-game-view, \
+  $('.signup-view, .logged-in, .user-settings-view, .video-game-display, .create-video-game-view, \
    .update-video-game-view').hide()
 
   // Append handlebars to forms
@@ -26,6 +26,7 @@ $(() => {
   $('#signup-button').on('click', authEvents.onSignUpSwitch)
   $('#signin-button').on('click', authEvents.onSignInSwitch)
   $('.logout-button').on('click', authEvents.onLogout)
+  $('#update-user').on('submit', authEvents.onUpdateUser) // Actually updates users
   $('#change-password').on('submit', authEvents.onChangePassword) // Actually changes password
   $('.change-password-button').on('click', authEvents.onChangePasswordSwitch) // Changes to the change password screen
   $('#cancel-change-button').on('click', authEvents.onChangePasswordCancel) // Cancels out of change password screen
@@ -38,6 +39,7 @@ $(() => {
   $('.video-game-view').on('click', '.video-game-section', videoGameEvents.onDetailVideoGame)
   $('.video-game-view').on('click', '#delete-video-game', videoGameEvents.onDeleteVideoGame)
   $('.video-game-view').on('click', '#cancel-video-game', videoGameEvents.onCancelDetailVideoGame)
+  $('#create-video-game').on('click', '#cancel-submit-button', videoGameEvents.onGameFormCancel) // Cancel posting create
+  $('#update-video-game').on('click', '#cancel-submit-button', videoGameEvents.onGameFormCancel) // Cancel posting update
   $('.video-game-view').on('click', '#update-game-button', videoGameEvents.onUpdateGameForm) // Changes to update game listing
-  // $('.video-game-view').on('click', '#update-video-game', videoGameEvents.onUpdateVideoGame)
 })

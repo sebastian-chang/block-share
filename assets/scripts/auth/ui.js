@@ -36,7 +36,7 @@ const signInSwitch = function () {
 const logoutSuccess = function () {
     $('#message').text('Successfully logged out!').removeClass('error')
     $('.signin-view').show()
-    $('.signup-view, .logged-in, .change-password-view, .video-game-display, \
+    $('.signup-view, .logged-in, .user-settings-view, .video-game-display, \
     .update-video-game-view, .create-video-game-view').hide()
     $('.video-game-view').empty()
 }
@@ -47,21 +47,35 @@ const logoutFailure = function () {
 // Change password functions
 const changePasswordSuccess = function () {
     $('#message').text('Password successfully changed!').removeClass('error')
-    $('.change-password-view').hide()
+    $('.user-settings-view').hide()
     $('.change-password-button').show()
     $('#change-password').trigger('reset')
 }
 const changePasswordFailure = function () {
     $('#message').text('An error has occurred while attempting change your password.  Please try again.').addClass('error')
 }
+// Update user functions
+const updateUserSuccess = function () {
+    $('#message').text('User successfully updated!').removeClass('error')
+    $('.user-settings-view').hide()
+    $('.change-password-button').show()
+    $('#change-password').trigger('reset')
+}
+const upDateUserFailure = function () {
+    $('#message').text('An error has occurred while attempting to update your user.  Please try again.').addClass('error')
+}
 // Switch back to previous view before attempting to change password
 const changePasswordSwitch = function () {
-    $('.change-password-button').hide()
-    $('.change-password-view').show()
+    $('.update-video-game-view, .create-video-game-view, .change-password-button').hide()
+    $('.user-settings-view, .video-game-display').show()
+    $('#create-video-game').trigger('reset')
+    $('#update-video-game').trigger('reset')
+    $('.video-game-view').empty()
 }
 const changePasswordCancel = function () {
-    $('.change-password-view').hide()
+    $('.user-settings-view').hide()
     $('.new-game, .change-password-button').show()
+    videoGames.onShowAllGames()
 
 }
 
@@ -74,6 +88,8 @@ module.exports = {
     signInSwitch,
     logoutFailure,
     logoutSuccess,
+    upDateUserFailure,
+    updateUserSuccess,
     changePasswordFailure,
     changePasswordSuccess,
     changePasswordSwitch,

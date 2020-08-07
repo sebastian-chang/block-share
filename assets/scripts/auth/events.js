@@ -43,6 +43,14 @@ const onChangePassword = function (event) {
         .then(ui.changePasswordSuccess)
         .catch(ui.changePasswordFailure)
 }
+const onUpdateUser = function (event) {
+    event.preventDefault()
+    const formData = getFormFields(event.target)
+    console.log('update user ', formData)
+    api.updateUser(formData)
+        .then(ui.updateUserSuccess)
+        .catch(ui.updateUserFailure)
+}
 // Switches views to change password 
 const onChangePasswordSwitch = function (event) {
     event.preventDefault()
@@ -61,6 +69,7 @@ module.exports = {
     onSignInSwitch,
     onLogout,
     onChangePassword,
+    onUpdateUser,
     onChangePasswordSwitch,
     onChangePasswordCancel,
 }

@@ -33,7 +33,7 @@ const onCreateGameForm = function (event) {
 const onCreateVideoGame = function (event) {
     event.preventDefault()
     const formData = getFormFields(event.target)
-    console.log('This is the form date for creating a new video game listing ',formData)
+    console.log('This is the form date for creating a new video game listing ', formData)
     api.createGame(formData)
         .then(ui.createVideoGameSuccess)
         .catch(ui.createVideoGameFailure)
@@ -49,10 +49,17 @@ const onUpdateGameForm = function (event) {
 const onUpdateVideoGame = function (event) {
     event.preventDefault()
     const formData = getFormFields(event.target)
-    console.log('This is the form date for updating a video game listing ',formData)
+    console.log('This is the form date for updating a video game listing ', formData)
     api.updateGame(formData)
         .then(ui.updateVideoGameSuccess)
         .catch(ui.updateVideoGameFailure)
+}
+
+// Cancel function incase user didn't want to change password
+const onGameFormCancel = function (event) {
+    event.preventDefault()
+    console.log('trying to go back')
+    ui.cancelGameForm()
 }
 
 // Delete video game
@@ -72,5 +79,6 @@ module.exports = {
     onUpdateVideoGame,
     onDetailVideoGame,
     onCancelDetailVideoGame,
+    onGameFormCancel,
     onDeleteVideoGame,
 }

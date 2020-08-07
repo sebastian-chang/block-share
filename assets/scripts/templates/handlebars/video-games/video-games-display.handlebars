@@ -5,12 +5,16 @@
     <h3>
         {{limit videoGame.title 15}}
     </h3>
-    <h6>Title:</h6>
+    <h6>Platform:</h6>
     <p>
-        {{#if videoGame.title}}
-        {{videoGame.platform}}
+        {{videoGame.console}}
+    </p>
+    <h6>Available:</h6>
+    <p>
+        {{#if videoGame.isAvailable}}
+        green
         {{else}}
-        No author provided.
+        red
         {{/if}}
     </p>
     {{!-- <button class="deleteBookButton btn btn-outline-danger" data-id="{{videoGame.id}}">Delete Book!</button> --}}
