@@ -4,7 +4,7 @@
 // const example = require('./example')
 const authEvents = require('./auth/events')
 const videoGameEvents = require('./video-games/events')
-const videoGameForm = require('./templates/handlebars/video-games/video-game-form.handlebars')
+// const videoGameForm = require('./templates/handlebars/video-games/video-game-form.handlebars')
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
@@ -17,8 +17,8 @@ $(() => {
    .update-video-game-view').hide()
 
   // Append handlebars to forms
-  $('#create-video-game').append(videoGameForm)
-  $('#update-video-game').append(videoGameForm)
+  // $('#create-video-game').append(videoGameForm)
+  // $('#update-video-game').append(videoGameForm)
 
   // Authorization event listeners
   $('#signup').on('submit', authEvents.onSignUp)

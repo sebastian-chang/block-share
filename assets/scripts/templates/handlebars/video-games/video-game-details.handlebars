@@ -49,7 +49,9 @@
         {{/if}}
     </p>
     <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
+    {{#if sameOwner}}
     <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
     <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
+    {{/if}}
     {{!-- {{> partial}} --}}
 </section>

@@ -1,42 +1,64 @@
+{{log test}}
+{{log gameInfo}}
     <div class="form-group">
         <label for="video-game-title">Title</label>
         <input type="text" class="form-control" name="videoGame[title]"
-            placeholder="Please enter a title of a video game" required>
+            placeholder="Please enter a title of a video game" value='{{gameInfo.title}}' required>
     </div>
     <div class="form-group">
         <label for="video-game-description">Description</label>
         <input type="text" class="form-control" name="videoGame[description]"
-            placeholder="Please enter a description of your video game">
+            placeholder="Please enter a description of your video game" value='{{gameInfo.description}}'>
     </div>
     <div class="form-group">
         <label for="video-game-studio">Studio</label>
         <input type="text" class="form-control" name="videoGame[studio]"
-            placeholder="Please enter the studio of the video game">
+            placeholder="Please enter the studio of the video game" value='{{gameInfo.studio}}'>
     </div>
     <div class="form-group">
         <label for="video-game-poster">Poster</label>
         <input type="text" class="form-control" name="videoGame[poster]"
-            placeholder="Please enter a URL of an image of the video game">
+            placeholder="Please enter a URL of an image of the video game" value='{{gameInfo.poster}}'>
     </div>
     <div class="form-group">
         <label for="video-game-rating"></label>
-        <select placeholder="Rating" name="videoGame[rating]" required>
-            <option disabled hidden selected value=''>Rating</option>
+        <select class='video-game-rating' placeholder="Rating" name="videoGame[rating]" required>
+            <option disabled hidden selected value=''>--Select a rating--</option>
             <option value='e'>Everyone</option>
             <option value='t'>Teen</option>
             <option value='m'>Mature</option>
-            <option value='a'>Adult only</option>
             <option value='rp'>Rating Pending</option>
         </select>
     </div>
     <div class="form-group">
         <label for="video-game-platform"></label>
-        <select placeholder="Platform" name="videoGame[platform]" required>
-            <option disabled hidden selected value=''>Platform</option>
+        <select class='video-game-platform'placeholder="Platform" name="videoGame[platform]" required>
+            <option disabled hidden selected value=''>-- Select a platform--</option>
             <option value='xbox'>Xbox</option>
+            <option value='ns'>Nintendo Switch</option>
             <option value='ps4'>Playstation 4</option>
             <option value='pc'>PC Computer</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit!</button>
     <a class="btn btn-danger" id='cancel-submit-button' role="button">Cancel</a>
+
+    <script>
+        function setSelectedIndex(dropdown, selected) {
+            // Loop through all the items in drop down list
+            for (let i = 0; i < dropdown[0].options.length; i++) {
+                console.log('the option right now is ', dropdown[0].options[i].value)
+                console.log('the valsearch right now is ', selected)
+                if (dropdown[0].options[i].value === selected) {
+                    // Item is found. Set its property and exit
+                    dropdown[0].options[i].selected = true
+                    console.log('found something ', dropdown[0].options[i])
+                    break
+                }
+            }
+            console.log('this is valsearch ', selected)
+            return
+        }
+        setSelectedIndex($('.video-game-rating'), "{{gameInfo.rating}}")
+        setSelectedIndex($('.video-game-platform'), "{{gameInfo.platform}}")
+    </script>
