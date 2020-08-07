@@ -1,0 +1,10 @@
+$input-bg-static: #ddd;
+$input-bg-pseudo-active: #43A047;
+$input-bg-pseudo-static: #E53935;
+$input-bg-light-active: #FFFF00;
+
+$input-width: 3rem; // adjust only this number for dimensions
+
+$input-radius: calc( #{$input-width} / 2 );
+$input-height: calc( #{$input-width} / 2 );
+$input-light-dims: calc( #{$input-height} / 2.5 );

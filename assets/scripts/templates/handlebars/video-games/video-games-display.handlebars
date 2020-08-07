@@ -2,8 +2,12 @@
 {{log videoGame.id}}
 <section class='video-game-section card card-1 col-lg-3' id="{{videoGame.id}}" data-id="{{videoGame.id}}">
     <div class='card-info-hover'>
-        <span class='card-like'style="font-size: 3em; color: green;">
-            <i class="fas fa-eye"></i>
+        {{#if videoGame.isAvailable}}
+        <span class='card-like available'>
+        {{else}}
+        <span class='card-like not-available'>
+        {{/if}}
+        <i class="fas fa-eye"></i>
         </span>
     </div>
     <div class="card-img"></div>
@@ -34,7 +38,11 @@
 
 
 <script>
-    $('#5f2c0f6257f929e10e1f209b, .card-1 .card-img, .card-1 .card-img-hover').css({'background-image': "url(" + "{{videoGame.poster}}" + ")", 'object-fit': 'cover'})
+    $('.video-game-section[data-id="{{videoGame.id}}"] + .card-1 .card-img, .card-1 .card-img-hover').css('background-image', 'url({{videoGame.poster}})')
 </script>
-
 {{/each}}
+
+    $('.video-game-section[data-id="5f2b71d1c2f4a1c534e1fdbe"] .card-1 .card-img, .card-1 .card-img-hover').css({
+    'background-image':
+    "url(https://edsurge.imgix.net/uploads/post/image/12857/guild-1573610501.jpg?auto=compress%2Cformat&w=1024&h=512&fit=crop)",
+    'object-fit': 'cover' })
