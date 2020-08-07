@@ -1,24 +1,40 @@
 {{#each videoGames as |videoGame|}}
 {{log videoGame.id}}
-<section class='video-game-section' data-id="{{videoGame.id}}">
-    <h6>Title:</h6>
-    <h3>
-        {{limit videoGame.title 15}}
-    </h3>
-    <h6>Platform:</h6>
-    <p>
-        {{videoGame.console}}
-    </p>
-    <h6>Available:</h6>
-    <p>
-        {{#if videoGame.isAvailable}}
-        green
-        {{else}}
-        red
-        {{/if}}
-    </p>
-    {{!-- <button class="deleteBookButton btn btn-outline-danger" data-id="{{videoGame.id}}">Delete Book!</button> --}}
-    {{!-- {{> partial}} --}}
+<section class='video-game-section card card-1 col-lg-3' id="{{videoGame.id}}" data-id="{{videoGame.id}}">
+    <div class='card-info-hover'>
+        <span class='card-like'style="font-size: 3em; color: green;">
+            <i class="fas fa-eye"></i>
+        </span>
+    </div>
+    <div class="card-img"></div>
+    <a href="#" class="card-link">
+        <div class="card-img-hover"></div>
+    </a>
+    <div class='class-info'>
+        <h6 class='card-category'>Title</h6>
+        <h3 class='card-title'>
+            {{videoGame.title}}
+        </h3>
+        <h6 class='card-by'>Platform</h6>
+        <p class='card-platform'>
+            {{videoGame.console}}
+        </p>
+        <h6>Available:</h6>
+        <p>
+            {{#if videoGame.isAvailable}}
+            green
+            {{else}}
+            red
+            {{/if}}
+        </p>
+    </div>
 </section>
+
+
+
+
+<script>
+    $('#5f2c0f6257f929e10e1f209b, .card-1 .card-img, .card-1 .card-img-hover').css({'background-image': "url(" + "{{videoGame.poster}}" + ")", 'object-fit': 'cover'})
+</script>
 
 {{/each}}
