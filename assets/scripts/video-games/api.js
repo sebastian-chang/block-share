@@ -11,8 +11,8 @@ const showAllGames = function () {
         },
     })
 }
-// Show all video games available to be borrowed
-const showAllGamesForUser = function () {
+// Show all video games belonging to certain user
+const showUserGames = function () {
     return $.ajax({
         url: config.apiUrl + '/video-games-user',
         method: 'GET',
@@ -74,7 +74,7 @@ const deleteGame = function (videoGameID) {
 
 module.exports = {
     showAllGames,
-    showAllGamesForUser,
+    showUserGames,
     getGameDetails,
     createGame,
     updateGame,

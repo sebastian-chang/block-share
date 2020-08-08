@@ -36,7 +36,7 @@ const signInSwitch = function () {
 const logoutSuccess = function () {
     $('#message').text('Successfully logged out!').removeClass('error')
     $('.signin-view').show()
-    $('.signup-view, .logged-in, .user-settings-view, .video-game-display, \
+    $('.signup-view, .logged-in, .user-info-view, .video-game-display, \
     .update-video-game-view, .create-video-game-view').hide()
     $('.video-game-view').empty()
 }
@@ -47,7 +47,7 @@ const logoutFailure = function () {
 // Change password functions
 const changePasswordSuccess = function () {
     $('#message').text('Password successfully changed!').removeClass('error')
-    $('.user-settings-view').hide()
+    $('.user-info-view').hide()
     $('.change-password-button').show()
     $('#change-password').trigger('reset')
 }
@@ -57,7 +57,7 @@ const changePasswordFailure = function () {
 // Update user functions
 const updateUserSuccess = function () {
     $('#message').text('User successfully updated!').removeClass('error')
-    $('.user-settings-view').hide()
+    $('.user-info-view').hide()
     $('.change-password-button').show()
     $('#change-password').trigger('reset')
 }
@@ -66,15 +66,16 @@ const upDateUserFailure = function () {
 }
 // Switch back to previous view before attempting to change password
 const changePasswordSwitch = function () {
-    $('.update-video-game-view, .create-video-game-view, .change-password-button').hide()
-    $('.user-settings-view, .video-game-display').show()
-    $('#create-video-game').trigger('reset')
-    $('#update-video-game').trigger('reset')
+    $('.update-video-game-view, .create-video-game-view, .change-password-button, .video-game-display, .update-user-view').hide()
+    $('.change-password-view, .new-game-button, .user-info-button').show()
+    $('#create-video-game, #update-video-game').trigger('reset')
+    // $('#update-video-game').trigger('reset')
     $('.video-game-view').empty()
 }
 const changePasswordCancel = function () {
-    $('.user-settings-view').hide()
-    $('.new-game, .change-password-button').show()
+    console.log('cancel password')
+    $('.user-info-view, .change-password-view').hide()
+    $('.new-game, .change-password-button, .video-game-display').show()
     videoGames.onShowAllGames()
 
 }

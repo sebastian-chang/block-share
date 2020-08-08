@@ -9,6 +9,12 @@ const onShowAllGames = function () {
         .then(ui.showAllGamesSuccess)
         .catch(ui.showAllGamesFailure)
 }
+// Shows user video game listings
+const onShowUserGames = function () {
+    api.showUserGames()
+        .then(ui.showUserGamesSuccess)
+        .catch(ui.showUserGamesFailure)
+}
 // Show the details of a selected video game
 const onDetailVideoGame = function (event) {
     event.preventDefault()
@@ -21,6 +27,11 @@ const onDetailVideoGame = function (event) {
 const onCancelDetailVideoGame = function (event) {
     event.preventDefault()
     ui.cancelDetailVideoGame()
+}
+// Send request to 'borrow' video game. Leave detail video game view.  Re show all video game listings
+const onBorrowVideoGame = function (event) {
+    event.preventDefault()
+    ui.borrowVideoGame()
 }
 
 // Create new video game functions
@@ -73,12 +84,14 @@ const onDeleteVideoGame = function (event) {
 
 module.exports = {
     onShowAllGames,
+    onShowUserGames,
     onCreateGameForm,
     onCreateVideoGame,
     onUpdateGameForm,
     onUpdateVideoGame,
     onDetailVideoGame,
     onCancelDetailVideoGame,
+    onBorrowVideoGame,
     onGameFormCancel,
     onDeleteVideoGame,
 }

@@ -12,7 +12,7 @@
     </div>
     <div class="card-img"></div>
     <a href="#" class="card-link">
-        <div class="card-img-hover"></div>
+        <div class="card-img-hover" data-img="{{videoGame.id}}"></div>
     </a>
     <div class='class-info'>
         <h6 class='card-category'>Title</h6>
@@ -23,26 +23,10 @@
         <p class='card-platform'>
             {{videoGame.console}}
         </p>
-        <h6>Available:</h6>
-        <p>
-            {{#if videoGame.isAvailable}}
-            green
-            {{else}}
-            red
-            {{/if}}
-        </p>
     </div>
 </section>
 
-
-
-
 <script>
-    $('.video-game-section[data-id="{{videoGame.id}}"] + .card-1 .card-img, .card-1 .card-img-hover').css('background-image', 'url({{videoGame.poster}})')
+    $('[data-img="{{videoGame.id}}"]').css({'background-image': 'url({{videoGame.poster}})', 'object-fit': 'contain'})
 </script>
 {{/each}}
-
-    $('.video-game-section[data-id="5f2b71d1c2f4a1c534e1fdbe"] .card-1 .card-img, .card-1 .card-img-hover').css({
-    'background-image':
-    "url(https://edsurge.imgix.net/uploads/post/image/12857/guild-1573610501.jpg?auto=compress%2Cformat&w=1024&h=512&fit=crop)",
-    'object-fit': 'cover' })

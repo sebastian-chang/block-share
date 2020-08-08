@@ -10,10 +10,27 @@ const showAllGamesSuccess = function (response) {
         store.videoGames = response.videoGames
     }
     const showVideoGamesHTML = showVideoGamesTemplate({videoGames: store.videoGames})
+    $('.video-game-view').empty()
     $('.video-game-view').append(showVideoGamesHTML)
+    $('.show-user-listings, .video-game-display').show()
+    $('.show-all-listings, .change-password-view, .user-info-view').hide()
 }
 const showAllGamesFailure = function () {
     $('#message').text('Failed to get all video games').addClass('error')
+}
+// Show all user video game listings
+const showUserGamesSuccess = function (response) {
+    if(response){
+        store.videoGames = response.videoGames
+    }
+    const showVideoGamesHTML = showVideoGamesTemplate({videoGames: store.videoGames})
+    $('.video-game-view').empty()
+    $('.video-game-view').append(showVideoGamesHTML)
+    $('.show-all-listings, .video-game-display').show()
+    $('.show-user-listings, .change-password-view, .user-info-view').hide()
+}
+const showUserGamesFailure = function () {
+    $('#message').text('Failed to get user video games').addClass('error')
 }
 // Show video game details
 const videoGameDetailsSuccess = function (response) {
@@ -31,14 +48,20 @@ const cancelDetailVideoGame = function () {
     $('.video-game-view').empty()
     showAllGamesSuccess()
 }
+const borrowVideoGame = function () {
+    console.log('Did we make it here?')
+    $('.borrow-modal').modal({ backdrop: 'static', keyboard: false , show: true})
+    // showAllGamesSuccess()
+}
 
 // Switch views to create game form
 const showCreateGameForm = function () {
-    $('.create-video-game-view').show()
+    $('.create-video-game-view, .change-password-button, .user-info-button').show()
     $('#update-video-game').trigger('reset')
     $('#update-video-game').empty()
+    $('#create-video-game').empty()
     $('#create-video-game').append(videoGameForm)
-    $('.video-game-display').hide()
+    $('.video-game-display, .user-info-view, .change-password-view, .new-game-button').hide()
 }
 
 // Successfully create a new video game listing 
@@ -109,9 +132,12 @@ const deleteVideoGameFailure = function () {
 module.exports = {
     showAllGamesFailure,
     showAllGamesSuccess,
+    showUserGamesFailure,
+    showUserGamesSuccess,
     videoGameDetailsFailure,
     videoGameDetailsSuccess,
     cancelDetailVideoGame,
+    borrowVideoGame,
     showCreateGameForm,
     createVideoGameFailure,
     createVideoGameSuccess,

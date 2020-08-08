@@ -22,9 +22,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+
       <ul class="navbar-nav ml-auto">
         <li class="nav-item d-lg-none">
-          <a class='nav-link logged-in change-password change-password-button' role="button">User settings</a>
+          <a class="nav-link logged-in show-user-listings" role='button'>Show My Listings</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link logged-in show-all-listings" role='button'>Show All Listings</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in user-info-button' role="button">User information</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
         </li>
         <li class="nav-item d-lg-none">
           <a class='nav-link logged-in new-game-button' role="button">Create new game</a>
@@ -32,6 +42,8 @@
         <li class="nav-item d-lg-none">
           <a class='nav-link logged-in logout-button' role="button">Logout</a>
         </li>
+        <a class="nav-link logged-in show-user-listings" role='button'>Show My Listings</a>
+        <a class="nav-link logged-in show-all-listings" role='button'>Show All Listings</a>
         <li>
           <div class='dropdown d-none d-lg-block'>
             <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
@@ -40,7 +52,10 @@
             </a>
             <ul class='dropdown-menu'>
               <li class="nav-item">
-                <a class='nav-link logged-in change-password change-password-button' role="button">User settings</a>
+                <a class='nav-link logged-in user-info-button' role="button">User settings</a>
+              </li>
+              <li class="nav-item">
+                <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
               </li>
               <li class="nav-item">
                 <a class='nav-link logged-in new-game-button' role="button">Create new game</a>
@@ -105,7 +120,7 @@
   </div>
 
   <!-- User settings view -->
-  <div class='user-settings-view container'>
+  <div class='user-info-view container'>
     <form id='update-user'>
       <div class="form-group">
         <label for="email">Email</label>
@@ -124,9 +139,11 @@
         <input type="text" class="form-control" name="user[userName]" placeholder="Please enter your first name">
       </div>
       <button type="submit" class="btn btn-primary">Update user</button>
-      <a class="btn btn-danger" id='cancel-change-button' role="button">Cancel</a>
+      <a class="btn btn-danger cancel-change-button" role="button">Cancel</a>
     </form>
-    <br>
+  </div>
+  <!-- Change password view -->
+  <div class='change-password-view container'>
     <form id='change-password'>
       <div class="form-group">
         <label for="old-password">Old Password</label>
@@ -137,14 +154,12 @@
         <input type="password" class="form-control" name="passwords[new]" placeholder="Please enter your new password">
       </div>
       <button type="submit" class="btn btn-primary">Change password</button>
-      <a class="btn btn-danger" id='cancel-change-button' role="button">Cancel</a>
+      <a class="btn btn-danger cancel-change-button" role="button">Cancel</a>
     </form>
   </div>
 
   <!-- Video games view -->
   <div class="video-game-display container col-lg-10">
-    <!-- <button type='submit' class='btn btn-primary new-game-button'>Create new game</button> -->
-    <!-- <button type='submit' class='btn btn-primary get-games-button'>Refresh Listings</button> -->
     <div class='video-game-view row justify-contend-lg-center'></div>
   </div>
 

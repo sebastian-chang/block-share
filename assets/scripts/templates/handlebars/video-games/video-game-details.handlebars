@@ -32,20 +32,15 @@
         {{videoGame.owner.userName}}
         {{/if}}
     </p>
-    <p>
-        {{!-- This is another test
-        {{#ifEquals videoGame.owner.token 'test' }}
-        {{videoGame.owner.fullName}}
-        {{else}}
-        {{videoGame.owner.userName}}
-        {{/if}} --}}
-    </p>
     <h6>Available:</h6>
     <p>
+        {{#if sameOwner}}
+        {{else}}
         {{#if videoGame.isAvailable}}
         <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
         {{else}}
         Someone is borrowing it
+        {{/if}}
         {{/if}}
     </p>
     <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
@@ -53,5 +48,24 @@
     <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
     <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
     {{/if}}
-    {{!-- {{> partial}} --}}
 </section>
+
+<!-- Borrow modal -->
+<div class="modal borrow-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Request sent</h5>
+                    <button type="button" class="close close-borrow-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <p id='borrow-message'>Request has been sent so you can borrow the game.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class='close close-borrow-modal' data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
