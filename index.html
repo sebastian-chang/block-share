@@ -37,7 +37,7 @@
           <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
         </li>
         <li class="nav-item d-lg-none">
-          <a class='nav-link logged-in new-game-button' role="button">Create new game</a>
+          <a class='nav-link logged-in new-game-button' role="button">Create New Game</a>
         </li>
         <li class="nav-item d-lg-none">
           <a class='nav-link logged-in logout-button' role="button">Logout</a>
@@ -58,7 +58,7 @@
                 <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
               </li>
               <li class="nav-item">
-                <a class='nav-link logged-in new-game-button' role="button">Create new game</a>
+                <a class='nav-link logged-in new-game-button' role="button">Create New Game</a>
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-item">
@@ -82,20 +82,30 @@
   <!-- Signup view -->
   <div class='signup-view container'>
     <form id='signup'>
-      <div class="form-group">
-        <label for="signup-email">Email</label>
-        <input type="email" class="form-control" name="credentials[email]"
-          placeholder="Please enter your email address">
+      <div class="form-field">
+        <label for="signup-email" class='form-input'>
+          <input type="email" class="form-input" name="credentials[email]"
+          placeholder=" ">
+          <span class='label'>Email</span>
+          <span class='helper'>Enter your email address</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="signup-password">Password</label>
-        <input type="password" class="form-control" name="credentials[password]"
-          placeholder="Please enter your password">
+      <div class="form-field">
+        <label for="signup-password" class='form-input'>
+
+          <input type="password" class="form-input" name="credentials[password]"
+          placeholder=" ">
+          <span class='label'>Password</span>
+          <span class='helper'>Enter your password</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="signup-password">Confirm Password</label>
-        <input type="password" class="form-control" name="credentials[password_confirmation]"
-          placeholder="Please re-enter your password">
+      <div class="form-field">
+        <label for="signup-password" class='form-input'>
+          <input type="password" class="form-input" name="credentials[password_confirmation]"
+          placeholder=" ">
+          <span class='label'>Confirm Password</span>
+          <span class='helper'>Re-enter your password</span>
+        </label>
       </div>
       <button type="submit" class="btn btn-primary">Sign up!</button>
       <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
@@ -105,14 +115,18 @@
   <!-- Signin view -->
   <div class='signin-view container'>
     <form id='signin'>
-      <div class="form-group">
-        <label for="signin-email">Email</label>
-        <input type="text" class="form-control" name="credentials[email]" placeholder="Please enter your email address">
+      <div class="form-field">
+        <label for="signin-email" class='form-input'>
+          <input type="text" class="form-input" name="credentials[email]" placeholder=" ">
+          <span class='label'>Email</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="signin-password">Password</label>
-        <input type="password" class="form-control" name="credentials[password]"
-          placeholder="Please enter your password">
+      <div class="form-field">
+        <label for="signin-password" class='form-input'>
+          <input type="password" class="form-input" name="credentials[password]"
+          placeholder=" ">
+          <span class='label'>Password</span>
+        </label>
       </div>
       <button type="submit" class="btn btn-primary">Sign in!</button>
       <a class="btn btn-sm btn-outline-info" id='signup-button' role="button">Sign up</a>
@@ -145,16 +159,20 @@
   <!-- Change password view -->
   <div class='change-password-view container'>
     <form id='change-password'>
-      <div class="form-group">
-        <label for="old-password">Old Password</label>
-        <input type="password" class="form-control" name="passwords[old]" placeholder="Please enter your old password">
+      <div class="form-field">
+        <label for="old-password" class='form-input'>
+          <input type="password" class="form-input" name="passwords[old]" placeholder=" ">
+          <span class='label'>Old Password</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="new-password">New Password</label>
-        <input type="password" class="form-control" name="passwords[new]" placeholder="Please enter your new password">
-      </div>
-      <button type="submit" class="btn btn-primary">Change password</button>
-      <a class="btn btn-danger cancel-change-button" role="button">Cancel</a>
+      <div class="form-field">
+        <label for="new-password" class='form-input'>
+          <input type="password" class="form-input" name="passwords[new]" placeholder=" ">
+          <span class='label'>New Password</span>
+        </div>
+          <button type="submit" class="btn btn-primary">Change password</button>
+          <a class="btn btn-danger cancel-change-button" role="button">Cancel</a>
+        </label>
     </form>
   </div>
 

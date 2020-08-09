@@ -62,7 +62,8 @@ const updateGame = function (formData) {
 }
 
 // Delete a video game listing
-const deleteGame = function (videoGameID) {
+const deleteGame = function () {
+    const videoGameID = store.currentGame.id
     return $.ajax({
         url: config.apiUrl + '/video-games/' + videoGameID,
         method: 'DELETE',

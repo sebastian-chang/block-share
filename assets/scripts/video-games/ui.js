@@ -10,10 +10,10 @@ const showAllGamesSuccess = function (response) {
         store.videoGames = response.videoGames
     }
     const showVideoGamesHTML = showVideoGamesTemplate({videoGames: store.videoGames})
-    $('.video-game-view').empty()
+    $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
-    $('.show-user-listings, .video-game-display').show()
-    $('.show-all-listings, .change-password-view, .user-info-view').hide()
+    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
+    $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
 const showAllGamesFailure = function () {
     $('#message').text('Failed to get all video games').addClass('error')
@@ -56,19 +56,19 @@ const borrowVideoGame = function () {
 
 // Switch views to create game form
 const showCreateGameForm = function () {
-    $('.create-video-game-view, .change-password-button, .user-info-button').show()
-    $('#update-video-game').trigger('reset')
+    $('.create-video-game-view, .change-password-button, .user-info-button, .show-all-listings').show()
+    $('#update-video-game, #change-password').trigger('reset')
     $('#update-video-game').empty()
     $('#create-video-game').empty()
     $('#create-video-game').append(videoGameForm)
-    $('.video-game-display, .user-info-view, .change-password-view, .new-game-button').hide()
+    $('.video-game-display, .user-info-view, .change-password-view, .new-game-button, .show-user-listings').hide()
 }
 
 // Successfully create a new video game listing 
 // Push new listing to store video games array and refresh listings
 const createVideoGameSuccess = function (response) {
     $('#message').text('Successfully created a new video game listing').removeClass('error')
-    $('.video-game-display').show()
+    $('.video-game-display, .new-game-button').show()
     $('.create-video-game-view').hide()
     $('#create-video-game').empty()
     $('.video-game-view').empty()
@@ -96,7 +96,6 @@ const updateVideoGameSuccess = function (response) {
     $('.update-video-game-view').hide()
     $('#update-video-game').trigger('reset')
     $('#update-video-game').empty()
-    // store.videoGames.push(response.videoGame) // this needs to be addressed
     refreshEvents.onShowAllGames()
 }
 const updateVideoGameFailure = function (error) {
@@ -107,19 +106,15 @@ const updateVideoGameFailure = function (error) {
 // Cancel out of game form create or update
 const cancelGameForm = function () {
     $('.update-video-game-view, .create-video-game-view').hide()
-    $('#create-video-game').trigger('reset')
-    $('#update-video-game').trigger('reset')
-    $('#create-video-game').empty()
-    $('#update-video-game').empty()
+    $('#create-video-game, #update-video-game').trigger('reset')
+    $('#create-video-game, #update-video-game').empty()
     $('.video-game-view').empty()
     $('.video-game-display').show()
     showAllGamesSuccess()
 }
 
 // Successfully delete a new video game
-const deleteVideoGameSuccess = function (id) {
-    console.log('this is what was passed ', id)
-    console.log('I doubt Im making it here')
+const deleteVideoGameSuccess = function () {
     $('.video-game-display').show()
     $('.video-game-view').empty()
     $('#message').text('Successfully deleted the video game listing').removeClass('error')

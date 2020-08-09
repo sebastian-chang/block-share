@@ -77,7 +77,8 @@ const onGameFormCancel = function (event) {
 const onDeleteVideoGame = function (event) {
     event.preventDefault()
     const id = $(event.target).closest('section').data('id')
-    api.deleteGame(id)
+    console.log('delete id ', id)
+    api.deleteGame()
         .then(ui.deleteVideoGameSuccess(id))
         .catch(ui.deleteVideoGameFailure)
 }
