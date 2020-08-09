@@ -1,13 +1,7 @@
 .video-game-display {
     justify-self: center;
+    /* margin: auto; */
 }
-
-
-/* .card .card-img-hover {
-    background-image: url("https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-    background-image: url("https://cdn02.nintendo-europe.com/media/images/10_share_images/portals_3/SI_Hub_Zelda_Portal.jpg");
-    object-fit: contain;
-} */
 
 .card-like {
     width: 18px;
@@ -44,14 +38,15 @@
 }
 
 .card {
-    margin-right: 25px;
+    margin: 20px;
+    padding: 0px !important;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
     background-color: #fff;
-    width: calc(100vh);
+    /* width: calc(25%); */
     position: relative;
-    border-radius: 12px;
+    border-radius: 12px !important;
     overflow: hidden;
-    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1) !important;
 }
 .card:hover {
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
@@ -108,10 +103,24 @@
 }
 
 .available {
-    font-size: 2em;
     color: green;
+    display: block;
+    background: black;
+    border-radius: 50%;
+    border: 1px grey solid;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0;
+    background: radial-gradient(circle at 10px 10px, green, #000);
 }
 .not-available {
-    font-size: 1em;
     color: red;
+    display: block;
+    background: black;
+    border-radius: 50%;
+    border: 1px grey solid;
+    height: 1rem;
+    width: 1rem;
+    margin: 0;
+    background: radial-gradient(circle at 10px 10px, red, #000);
 }

@@ -1,20 +1,18 @@
 {{#each videoGames as |videoGame|}}
 {{log videoGame.id}}
-<section class='video-game-section card card-1 col-lg-3' id="{{videoGame.id}}" data-id="{{videoGame.id}}">
+<section class='video-game-section card col-lg-3' id="{{videoGame.id}}" data-id="{{videoGame.id}}">
     <div class='card-info-hover'>
         {{#if videoGame.isAvailable}}
         <span class='card-like available'>
         {{else}}
         <span class='card-like not-available'>
         {{/if}}
-        <i class="fas fa-eye"></i>
-        </span>
+        {{!-- <i class="fa fa-circle" aria-hidden="true"></i> --}}
+        {{!-- <figure class="circle"></figure> --}}
     </div>
     <div class="card-img"></div>
-    <a href="#" class="card-link">
         <div class="card-img-hover" data-img="{{videoGame.id}}"></div>
-    </a>
-    <div class='class-info'>
+    <div class='card-info'>
         <h6 class='card-category'>Title</h6>
         <h3 class='card-title'>
             {{videoGame.title}}

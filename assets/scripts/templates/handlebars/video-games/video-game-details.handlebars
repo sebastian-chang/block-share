@@ -1,53 +1,50 @@
 {{log videoGame}}
-<section class='video-game-details' data-id="{{videoGame.id}}">
-    <h6>Title:</h6>
-    <h3>
-        {{videoGame.title}}
-    </h3>
-    <h6>Description:</h6>
-    <p>
-        {{#if videoGame.description}}
-        {{videoGame.description}}
-        {{else}}
-        Please enter a description for the game
-        {{/if}}
-    </p>
-    <h6>Studio:</h6>
-    <p>
-        {{videoGame.studio}}
-    </p>
-    <h6>Rating:</h6>
-    <p>
-        {{videoGame.ESRB}}
-    </p>
-    <h6>Platform:</h6>
-    <p>
-        {{videoGame.console}}
-    </p>
-    <h6>Owner:</h6>
-    <p>
-        {{#if videoGame.owner.hasFullName}}
-        {{videoGame.owner.fullName}}
-        {{else}}
-        {{videoGame.owner.userName}}
-        {{/if}}
-    </p>
-    <h6>Available:</h6>
-    <p>
-        {{#if sameOwner}}
-        {{else}}
-        {{#if videoGame.isAvailable}}
-        <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
-        {{else}}
-        Someone is borrowing it
-        {{/if}}
-        {{/if}}
-    </p>
-    <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
-    {{#if sameOwner}}
-    <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
-    <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
-    {{/if}}
+<section class='video-game-details'>
+    <div class='card video-game-details-card'>
+        <div class='detail-title-bar card-header' style="background-color: {{videoGame.consoleColor}}">
+            <img src="public/images/icons/platform/{{videoGame.consoleFileName}}" alt="">
+        </div>
+        <div class='row no-gutters'>
+            <div class='detail-img col-sm-5'>
+                {{#if videoGame.hasPoster}}
+                <img src="{{videoGame.poster}}" alt="..." class='card-img-top'>
+                {{else}}
+                <img src="https://www.greenmangaming.com/blog/wp-content/uploads/2017/08/cats-videogames.jpg" alt="..." class='card-img-top'>
+                {{/if}}
+                <span class="detail-rating">
+                    <img src="public/images/icons/ratings/{{videoGame.ESRBFileName}}" alt="">
+                </span>
+            </div>
+            <div class='detail-info'>
+                {{#if sameOwner}}
+                {{else}}
+                {{#if videoGame.isAvailable}}
+                <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
+                {{else}}
+                <button id='borrow-video-game' class="btn btn-outline-success" disabled
+                    data-id="{{videoGame.id}}">Already borrowed</button>
+                {{/if}}
+                {{/if}}
+                <h3>{{videoGame.title}}</h3>
+                <h6>{{videoGame.studio}}</h6>
+                <p>{{videoGame.description}}</p>
+            </div>
+        </div>
+        <div class='card-footer'>
+            <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
+            <span class='detail-owner'>
+                {{#if videoGame.owner.hasFullName}}
+                {{videoGame.owner.fullName}}
+                {{else}}
+                {{videoGame.owner.userName}}
+                {{/if}}
+            </span>
+            {{#if sameOwner}}
+            <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
+            <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
+            {{/if}}
+        </div>
+    </div>
 </section>
 
 <!-- Borrow modal -->
@@ -61,7 +58,11 @@
                     </button>
             </div>
             <div class="modal-body">
-                <p id='borrow-message'>Request has been sent so you can borrow the game.</p>
+                <p id='borrow-message'>Request has been sent to {{#if videoGame.owner.hasFullName}}
+                    {{videoGame.owner.fullName}}
+                    {{else}}
+                    {{videoGame.owner.userName}}
+                    {{/if}} you can borrow {{videoGame.title}}.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class='close close-borrow-modal' data-dismiss="modal">Close</button>
@@ -69,3 +70,70 @@
         </div>
     </div>
 </div>
+
+
+
+
+{{!-- 
+<section class='video-game-details row container' data-id="{{videoGame.id}}">
+    <div class='col-sm-4 box detail-img'>
+        <img src="{{videoGame.poster}}" alt="Game Poster">
+    </div>
+    <div class='video-game-info col-sm-8'>
+        <span class="bg animated fadeInDown">
+            {{#if sameOwner}}
+            {{else}}
+            {{#if videoGame.isAvailable}}
+            <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
+            {{else}}
+            Someone is borrowing it
+            {{/if}}
+            {{/if}}
+        </span>
+        <h3>
+            {{videoGame.title}}
+        </h3>
+        <p>
+            {{#if videoGame.description}}
+            {{videoGame.description}}
+            {{else}}
+            Please enter a description for the game
+            {{/if}}
+        </p>
+        <h6>
+            {{videoGame.studio}}
+        </h6>
+        <h6>Rating:</h6>
+        <p>
+            {{videoGame.ESRB}}
+        </p>
+        <h6>Platform:</h6>
+        <p>
+            {{videoGame.console}}
+        </p>
+        <h6>Owner:</h6>
+        <p>
+            {{#if videoGame.owner.hasFullName}}
+            {{videoGame.owner.fullName}}
+            {{else}}
+            {{videoGame.owner.userName}}
+            {{/if}}
+        </p>
+        {{!-- <h6>Available:</h6>
+    <p>
+        {{#if sameOwner}}
+        {{else}}
+        {{#if videoGame.isAvailable}}
+        <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
+        {{else}}
+        Someone is borrowing it
+        {{/if}}
+        {{/if}}
+    </p> --}}
+{{!-- <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
+{{#if sameOwner}}
+<button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
+<button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
+{{/if}} --}}
+</div>
+{{!-- </section> --}}

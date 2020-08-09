@@ -1,6 +1,7 @@
-@import './toggle.scss';
+@import "./toggle.scss";
 
-.create-video-game-view, .update-video-game-view {
+.create-video-game-view,
+.update-video-game-view {
     /* display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -18,7 +19,8 @@
 }
 
 /* Input*/
-.form-input > .form-input, .input-select {
+.form-input > .form-input,
+.input-select {
     border: none;
     background-color: transparent;
     border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
@@ -29,8 +31,14 @@
     /* padding-bottom: 0.5rem; */
 }
 
-.form-input > .form-input:focus, .input-select:focus {
+.form-input > .form-input:focus,
+.input-select:focus {
     outline: none;
+}
+
+.form-input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .form-input > .label {
@@ -66,18 +74,20 @@
     opacity: 1;
 }
 
-.form-input > .form-input:hover, .input-select:hover {
+.form-input > .form-input:hover,
+.input-select:hover {
     background: var(--omrs-color-interaction-minus-two);
     border-color: var(--omrs-color-ink-high-contrast);
 }
 
+/* Keep label from dropping back down above input text */
 .form-input > .form-input:focus + .label,
 .form-input > .form-input:not(:placeholder-shown) + .label {
     top: 0;
     font-size: 0.85rem;
     margin-bottom: 32px;
 }
-
+/* Different for drop down menu*/
 .form-input > select:valid + .label {
     top: 0;
     font-size: 0.85rem;
@@ -85,9 +95,9 @@
 }
 
 .form-input:not(.omrs-input-danger) > .form-input:focus + .label {
-    color: var(--omrs-color-interaction);
+    color: var(--omrs-color-danger);
 }
 
 .form-input:not(.omrs-input-danger) > .form-input:focus {
-    border-color: var(--omrs-color-interaction);
+    color: var(--omrs-color-danger);
 }
