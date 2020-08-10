@@ -41,6 +41,8 @@ With this application you can search video game postings in your neighborhood.  
 - Javascript
 - Express
 - Handlebars
+- Mongoose
+- MongoDB
 
 ### Unsolved Problems
 
