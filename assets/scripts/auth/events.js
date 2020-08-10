@@ -38,7 +38,6 @@ const onSignInSwitch = function (event) {
 const onChangePassword = function (event) {
     event.preventDefault()
     const formData = getFormFields(event.target)
-    console.log('change password ', formData)
     api.changePassword(formData)
         .then(ui.changePasswordSuccess)
         .catch(ui.changePasswordFailure)
@@ -46,7 +45,6 @@ const onChangePassword = function (event) {
 const onUpdateUser = function (event) {
     event.preventDefault()
     const formData = getFormFields(event.target)
-    console.log('update user ', formData)
     api.updateUser(formData)
         .then(ui.updateUserSuccess)
         .catch(ui.updateUserFailure)

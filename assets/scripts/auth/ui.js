@@ -77,7 +77,6 @@ const changePasswordSwitch = function () {
     $('.video-game-view').empty()
 }
 const changePasswordCancel = function () {
-    console.log('cancel password')
     $('#change-password').trigger('reset')
     $('.user-info-view, .change-password-view').hide()
     $('.new-game, .change-password-button, .video-game-display').show()

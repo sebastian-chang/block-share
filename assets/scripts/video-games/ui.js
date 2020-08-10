@@ -52,7 +52,6 @@ const cancelDetailVideoGame = function () {
 }
 const borrowVideoGame = function () {
     $('.borrow-modal').modal({ backdrop: 'static', keyboard: false , show: true})
-    // showAllGamesSuccess()
 }
 
 // Switch views to create game form
@@ -78,7 +77,6 @@ const createVideoGameSuccess = function (response) {
     showAllGamesSuccess()
 }
 const createVideoGameFailure = function (error) {
-    console.log(error)
     $('#message').text('Failed to create a new video game listing').removeClass('error')
 }
 
@@ -102,7 +100,6 @@ const updateVideoGameSuccess = function () {
     refreshEvents.onShowAllGames()
 }
 const updateVideoGameFailure = function (error) {
-    console.log(error)
     $('#message').text('Failed to update the video game listing').removeClass('error')
 }
 

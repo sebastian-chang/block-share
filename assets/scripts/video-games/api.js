@@ -50,7 +50,6 @@ const createGame = function (formData) {
 // Update new listing of a video game
 const updateGame = function (formData) {
     const videoGameID = store.currentGame.id
-    console.log(videoGameID)
     return $.ajax({
         url: config.apiUrl + '/video-games/' + videoGameID,
         method: 'PATCH',
