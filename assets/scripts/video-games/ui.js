@@ -14,6 +14,7 @@ const showAllGamesSuccess = function (response) {
     $('#message').text('All game listings!').removeClass('error')
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
+    // Sets is available option from database
     for (let i in store.videoGames){
         $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
     }
@@ -32,6 +33,10 @@ const showUserGamesSuccess = function (response) {
     $('#message').text('All your game listings!').removeClass('error')
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
+    // Sets is available option from database
+    for (let i in store.videoGames) {
+        $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
+    }
     $('.show-all-listings, .video-game-display, .new-game-button, .change-password-button').show()
     $('.show-user-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
