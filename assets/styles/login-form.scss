@@ -1,0 +1,103 @@
+@import "./variables.scss";
+
+.signup-view,
+.signin-view,
+.change-password-view,
+.user-settings-view {
+    /* display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around; */
+    margin-top: 30px;
+    border: 1px solid whitesmoke;
+    padding: 21px;
+    border-radius: 4px;
+    width: 50%;
+
+    .form-field {
+        margin-bottom: 1.5rem;
+        position: relative;
+        width: 100%; 
+    }
+
+    /* Input*/
+    .form-input > .form-input,
+    .input-select {
+        border: none;
+        background-color: transparent;
+        border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+        width: 100%;
+        font-size: 1.0625rem;
+        padding-left: 0.875rem;
+        padding-top: 0.825rem;
+        /* padding-bottom: 0.5rem; */
+    }
+    .form-input, select, textarea {
+        width: 100%;
+    }
+
+    .form-input > .form-input:focus,
+    .input-select:focus {
+        outline: none;
+    }
+
+    .form-input > .label {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.875rem;
+        font-size: 1.1rem;
+        color: var(--omrs-color-ink-medium-contrast);
+        transition: top 0.2s;
+    }
+    .input-select > .label {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.875rem;
+        font-size: 1.1rem;
+        color: var(--omrs-color-ink-medium-contrast);
+        transition: top 0.2s;
+    }
+    .form-checkbox > .label {
+        /* position: absolute; */
+        top: 0.5rem;
+        margin: 10px;
+        font-size: 1.1rem;
+        color: var(--omrs-color-ink-medium-contrast);
+        transition: top 0.2s;
+    }
+
+    .form-input > .helper {
+        font-size: 0.9375rem;
+        color: var(--omrs-color-ink-medium-contrast);
+        letter-spacing: 0.0275rem;
+        margin: 0.125rem 0.875rem;
+        opacity: 1;
+    }
+
+    .form-input > .form-input:hover,
+    .input-select:hover {
+        background: var(--omrs-color-interaction-minus-two);
+        border-color: var(--omrs-color-ink-high-contrast);
+    }
+
+    .form-input > .form-input:focus + .label,
+    .form-input > .form-input:not(:placeholder-shown) + .label {
+        top: 0;
+        font-size: 0.85rem;
+        margin-bottom: 32px;
+    }
+
+    .form-input > select:valid + .label {
+        top: 0;
+        font-size: 0.85rem;
+        margin-bottom: 32px;
+    }
+
+    .form-input:not(.omrs-input-danger) > .form-input:focus + .label {
+        color: var(--omrs-color-interaction);
+    }
+
+    .form-input:not(.omrs-input-danger) > .form-input:focus {
+        border-color: var(--omrs-color-interaction);
+    }
+}
