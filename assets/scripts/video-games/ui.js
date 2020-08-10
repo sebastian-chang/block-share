@@ -14,8 +14,8 @@ const showAllGamesSuccess = function (response) {
     $('#message').text('All game listings!').removeClass('error')
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
-    for (let i in response.videoGames){
-        $(`[data-img=${response.videoGames[i].id}]`).css({ 'background-image': `url(${response.videoGames[i].poster})`, 'object-fit': 'contain' })
+    for (let i in store.videoGames){
+        $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
     }
     $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
     $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
