@@ -5,6 +5,7 @@
 @import "login-form.scss";
 @import "./variables";
 @import "./toggle.scss";
+@import './borrow-modal.scss';
 
 body {
     background-color: var(--bb-color-dark-blue-low-contrast);
@@ -76,4 +77,11 @@ body {
         background-color: white;
         border-color: var(--bb-color-danger-highlight);
     }
+}
+
+.message-board {
+    margin-top: 55px;
+    font-size: 1.5rem;
+    // height: 300px;
+    color: var(--bb-color-rat-race-gold)
 }

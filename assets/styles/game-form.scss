@@ -55,7 +55,6 @@
         transition: top 0.2s;
     }
     .form-checkbox > .label {
-        /* position: absolute; */
         top: 0.5rem;
         margin: 10px;
         font-size: .85rem;
@@ -73,7 +72,6 @@
 
     .form-input > .form-input:hover,
     .input-select:hover {
-        // background: var(--omrs-color-interaction-minus-two);
         border-color: var(--bb-color-rat-race-gold);
     }
     .form-input > .form-input:hover + .label,
@@ -100,6 +98,6 @@
     }
 
     .form-input > .form-input:focus {
-        color: var(--bb-color-rat-race-gold);
+        color: var(--bb-color-ink-medium);
     }
 }

@@ -5,7 +5,6 @@
     // font-family: 'Spartan', sans-serif;
     // font-size: 12px;
     // font-family: "Raleway", sans-serif;
-    text-transform: uppercase;
     font-size: 13px;
     margin-top: 30px;
     border: 1px solid whitesmoke;
@@ -26,7 +25,6 @@
     .input-select {
         border: none;
         background-color: transparent;
-        // border-bottom: 0.125rem solid var(--bb-color-rat-race-gold);
         border-bottom: 0.125rem solid var(--bb-color-ink-medium);
         width: 100%;
         font-size: 1.0625rem;
@@ -52,10 +50,8 @@
         top: 0.5rem;
         left: 0.875rem;
         font-size: 1.1rem;
-        // color: 0.125rem solid rgb(130, 130, 130);
-        // color: var(--bb-color-rat-race-gold);
+        text-transform: uppercase;
         color: var(--bb-color-ink-medium);
-        // text-transform: uppercase;
         transition: top 0.2s;
     }
     .input-select > .label {
@@ -75,7 +71,7 @@
     }
 
     .form-input > .helper {
-        font-size: 0.9375rem;
+        font-size: 0.8rem;
         color: var(--bb-color-ink-medium);
         letter-spacing: 0.0275rem;
         margin: 0.125rem 0.875rem;
@@ -84,7 +80,6 @@
 
     .form-input > .form-input:hover,
     .input-select:hover {
-        // background: var(--bb-color-dark {-blue-lowest-contrast);
         border-color: var(--bb-color-rat-race-gold);
     }
     .form-input > .form-input:hover + .label {
@@ -109,6 +104,6 @@
     }
 
     .form-input > .form-input:focus {
-        border-color: var(--bb-color-rat-race-gold);
+        border-color: var(--bb-color-ink-medium);
     }
 }

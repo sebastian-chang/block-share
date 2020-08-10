@@ -1,0 +1,16 @@
+.modal-header {
+    background-color: var(--bb-color-dark-blue);
+    color: var(--bb-color-rat-race-gold);
+    font-family: "Roboto Slab", serif;
+    text-transform: uppercase;
+}
+#borrow-message {
+    font-family: "Raleway", sans-serif;
+    color: var(--bb-ink-solid-grey);
+}
+.close-borrow-modal {
+    color: var(--bb-color-bright-yellow);
+    &:hover {
+        color: var(--bb-color-rat-race-gold);
+    }
+}

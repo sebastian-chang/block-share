@@ -70,6 +70,7 @@ const upDateUserFailure = function () {
 }
 // Switch back to previous view before attempting to change password
 const changePasswordSwitch = function () {
+    $('#message').text('Update your password.').removeClass('error')
     $('.update-video-game-view, .create-video-game-view, .change-password-button, .video-game-display, .update-user-view, .show-user-listings').hide()
     $('.change-password-view, .new-game-button, .user-info-button, .show-all-listings').show()
     $('#create-video-game, #update-video-game').trigger('reset')

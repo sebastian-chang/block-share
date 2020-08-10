@@ -105,7 +105,7 @@
 }
 
 .available {
-    color: var(--bb-color-green);
+    color: var(--bb-color-good);
     display: block;
     background: black;
     border-radius: 50%;
@@ -113,7 +113,7 @@
     height: 1.5rem;
     width: 1.5rem;
     margin: 0;
-    background: radial-gradient(circle at 10px 10px, var(--bb-color-green), black);
+    background: radial-gradient(circle at 10px 10px, var(--bb-color-good), black);
 }
 .not-available {
     color: var(--bb-color-danger);

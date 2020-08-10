@@ -7,6 +7,7 @@ const showAllGamesSuccess = function (response) {
     if (response) {
         store.videoGames = response.videoGames
     }
+    // $('#message').text('All game listings!').removeClass('error')
     const showVideoGamesHTML = showVideoGamesTemplate({ videoGames: store.videoGames })
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
@@ -22,6 +23,7 @@ const showUserGamesSuccess = function (response) {
         store.videoGames = response.videoGames
     }
     const showVideoGamesHTML = showVideoGamesTemplate({ videoGames: store.videoGames })
+    $('#message').text('All your game listings!').removeClass('error')
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
     $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
@@ -34,6 +36,6 @@ const showUserGamesFailure = function () {
 module.exports = {
     showAllGamesFailure,
     showAllGamesSuccess,
-    showUserGamesSuccess,
+    showUserGamesFailure,
     showUserGamesSuccess,
 }
