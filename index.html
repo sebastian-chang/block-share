@@ -15,7 +15,7 @@
 
 <body class='container'>
   <!-- Nav bar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top container">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
     <span class="navbar-brand">Block Share</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,9 +48,10 @@
           <div class='dropdown d-none d-lg-block'>
             <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <span class='navbar-toggler-icon' id='account-span'></span>
+              <!-- <span class='navbar-toggler-icon' id='account-span'></span> -->
+              <i class="fas fa-user-astronaut"></i>
             </a>
-            <ul class='dropdown-menu'>
+            <ul class='dropdown-menu dropdown-menu-right'>
               <li class="nav-item">
                 <a class='nav-link logged-in user-info-button' role="button">User settings</a>
               </li>
@@ -107,7 +108,7 @@
           <span class='helper'>Re-enter your password</span>
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Sign up!</button>
+      <button type="submit" class="btn btn-primary btn-sm">Sign up!</button>
       <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
     </form>
   </div>
@@ -117,7 +118,7 @@
     <form id='signin'>
       <div class="form-field">
         <label for="signin-email" class='form-input'>
-          <input type="text" class="form-input" name="credentials[email]" placeholder=" ">
+          <input type="text" class="form-input" name="credentials[email]" placeholder=" " required>
           <span class='label'>Email</span>
           <!-- <span class='helper'>Type in your email address here. Going to keep adding text. Maybe some more?</span> -->
         </label>
@@ -129,7 +130,7 @@
           <span class='label'>Password</span>
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Sign in!</button>
+      <button type="submit" class="btn btn-primary btn-sm">Sign in!</button>
       <a class="btn btn-sm btn-outline-info" id='signup-button' role="button">Sign up</a>
     </form>
   </div>
@@ -171,8 +172,8 @@
           <input type="password" class="form-input" name="passwords[new]" placeholder=" ">
           <span class='label'>New Password</span>
         </div>
-          <button type="submit" class="btn btn-primary">Change password</button>
-          <a class="btn btn-danger cancel-change-button" role="button">Cancel</a>
+          <button type="submit" class="btn btn-primary btn-sm">Change password</button>
+          <a class="btn btn-danger cancel-change-button btn-sm" role="button">Cancel</a>
         </label>
     </form>
   </div>

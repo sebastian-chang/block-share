@@ -26,8 +26,8 @@ const showUserGamesSuccess = function (response) {
     const showVideoGamesHTML = showVideoGamesTemplate({videoGames: store.videoGames})
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
-    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
-    $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
+    $('.show-all-listings, .video-game-display, .new-game-button, .change-password-button').show()
+    $('.show-user-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
 const showUserGamesFailure = function () {
     $('#message').text('Failed to get user video games').addClass('error')

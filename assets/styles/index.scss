@@ -1,16 +1,79 @@
 @import "~bootstrap/scss/bootstrap";
-@import "game-displays.css";
+@import "game-displays.scss";
 @import "game-details.scss";
 @import "game-form.scss";
 @import "login-form.scss";
 @import "./variables";
 @import "./toggle.scss";
-@import "../../public/images/fontawesome-free-5.14.0-web/scss/fontawesome.scss";
-@import "../../public/images/fontawesome-free-5.14.0-web/scss/solid.scss";
-@import "../../public/images/fontawesome-free-5.14.0-web/scss/regular.scss";
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 body {
-    background-color: #d2dbdd;
+    background-color: var(--bb-color-dark-blue-low-contrast);
+}
+
+.error {
+    color: var(--bb-color-danger);
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: #1030ad;
+    width: 100%;
+    .navbar-brand {
+        margin-left: 50px;
+    }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        // font-size: 1.5rem;
+        color: var(--bb-color-rat-race-gold);
+        text-shadow: 1px 1px var(--bb-color-bright-yellow-low-contrast);
+        &.nav-link:hover {
+            color: var(--bb-color-bright-yellow);
+            text-shadow: var(--bb-color-rat-race-gold);
+        }
+    }
+    ul.dropdown-menu {
+        justify-content: center;
+        background-color: var(--bb-color-dark-blue);
+    }
+    .dropdown-toggle {
+        margin-right: 50px;
+        color: var(--bb-color-rat-race-gold);
+    }
+}
+.label {
+    user-select: none;
+}
+.btn-primary,
+.btn-info,
+.btn-success {
+    background-color: var(--bb-color-dark-blue);
+    border-color: var(--bb-color-dark-blue);
+    color: var(--bb-color-rat-race-gold);
+    &:hover {
+        color: var(--bb-color-rat-race-gold);
+        background-color: var(--bb-color-dark-blue-med-contrast);
+    }
+}
+.btn-danger {
+    background-color: var(--bb-color-danger);
+    border-color: var(--bb-color-danger);
+    color: white;
+    &:hover {
+        background-color: var(--bb-color-danger-highlight);
+    }
+}
+.btn-outline-danger {
+    color: var(--bb-color-danger);
+    &:hover {
+        background-color: var(--bb-color-danger);
+    }
+}
+.btn-outline-warning:disabled {
+    color: var(--bb-color-danger-highlight);
+    border-color: var(--bb-color-danger-highlight);
+    &:hover {
+        color: var(--bb-color-danger-highlight);
+        background-color: white;
+        border-color: var(--bb-color-danger-highlight);
+    }
 }

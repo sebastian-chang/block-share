@@ -10,10 +10,10 @@
     // overflow: hidden;
     // box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1) !important;
 }
-.detail-title-bar{
+.detail-title-bar {
     height: 40px;
 }
-.detail-title-bar img{
+.detail-title-bar img {
     position: absolute;
     background: transparent;
     height: 30px;
@@ -35,13 +35,13 @@
     z-index: 1;
     // object-fit: fill;
 }
-.detail-rating{
+.detail-rating {
     position: absolute;
     z-index: 2;
     bottom: 0;
     left: 0;
 }
-.detail-rating img{
+.detail-rating img {
     width: 8%;
     height: auto;
 }
@@ -49,15 +49,18 @@
 .detail-info h3 {
     margin-top: 5px;
     margin-bottom: 10px;
+    margin-left: 10px;
     text-transform: uppercase;
     font-size: 2rem;
     letter-spacing: 2px;
     font-weight: 500;
     font-family: "Roboto Slab", serif;
+    color: var(--bb-color-rat-race-gold);
 }
 .detail-info h6 {
     // margin-top: 5px;
     // margin-bottom: 10px;
+    margin-left: 25px;
     text-transform: uppercase;
     font-size: 1rem;
     // letter-spacing: 2px;
@@ -66,10 +69,26 @@
 }
 
 .detail-info p {
-	width: 280px;
-	font-size: 13px;
-	line-height: 1.4;
-	color: #aaa;
-	margin: 20px 0;
-	
+    width: 280px;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--bb-color-ink-medium);
+    // margin: 20px 0;
+}
+.detail-owner {
+    float: right;
+    .game-owner-name {
+        font-family: "Roboto Slab", serif;
+        color: var(--bb-color-rat-race-gold);
+        margin-right: 10px;
+    }
+}
+
+#borrow-video-game {
+    position: absolute;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
 }

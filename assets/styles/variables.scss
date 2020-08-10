@@ -1,23 +1,40 @@
+@import "../../public/images/fontawesome-free-5.14.0-web/scss/fontawesome.scss";
+@import "../../public/images/fontawesome-free-5.14.0-web/scss/solid.scss";
+@import "../../public/images/fontawesome-free-5.14.0-web/scss/regular.scss";
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
 $input-bg-static: #ddd;
-$input-bg-pseudo-active: #43A047;
-$input-bg-pseudo-static: #E53935;
-$input-bg-light-active: #FFFF00;
+$input-bg-pseudo-active: #43a047;
+$input-bg-pseudo-static: #e53935;
+$input-bg-light-active: #ffff00;
 
-$input-width: 3rem; // adjust only this number for dimensions
+$input-width: 2.5rem; // adjust only this number for dimensions
 
-$input-radius: calc( #{$input-width} / 2 );
-$input-height: calc( #{$input-width} / 2 );
-$input-light-dims: calc( #{$input-height} / 2.5 );
-
+$input-radius: calc(#{$input-width} / 2);
+$input-height: calc(#{$input-width} / 2);
+$input-light-dims: calc(#{$input-height} / 2.5);
 
 :root {
     --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
     --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
-    --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+    --bb-color-ink-medium: rgba(19, 19, 21, 0.6);
+    --bb-color-ink-solid-grey: #868686;
     --omrs-color-interaction: #1e4bd1;
-    --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
-    --omrs-color-danger: #b50706;
-    --omrs-color-bg-low-contrast: #eff1f2;
-    --omrs-color-ink-high-contrast: #121212;
-    --omrs-color-bg-high-contrast: #ffffff;
+    // --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+    --bb-color-danger: #b50706;
+    --bb-color-danger-highlight: #e60505;
+    --bb-color-good: #0cb506;
+    // --omrs-color-bg-low-contrast: #eff1f2;
+    // --omrs-color-ink-high-contrast: #121212;
+    // --omrs-color-bg-high-contrast: #ffffff;
+    --bb-color-dark-blue: rgba(16, 48, 173, 1);
+    --bb-color-dark-blue-med-contrast: rgb(36, 78, 247);
+    --bb-color-dark-blue-low-contrast: rgba(16, 48, 173, 0.25);
+    --bb-color-dark-blue-lowest-contrast: rgba(16, 47, 173, 0.096);
+    --bb-color-rat-race-gold: rgba(241, 156, 10, 1);
+    --bb-color-darker-gold: #db9326;
+    --bb-color-bright-yellow: rgba(255, 226, 10, 1);
+    --bb-color-bright-yellow-low-contrast: rgba(255, 226, 10, .3);
 }

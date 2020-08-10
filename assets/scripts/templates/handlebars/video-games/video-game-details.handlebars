@@ -9,7 +9,8 @@
                 {{#if videoGame.hasPoster}}
                 <img src="{{videoGame.poster}}" alt="..." class='card-img-top'>
                 {{else}}
-                <img src="https://www.greenmangaming.com/blog/wp-content/uploads/2017/08/cats-videogames.jpg" alt="..." class='card-img-top'>
+                <img src="https://www.greenmangaming.com/blog/wp-content/uploads/2017/08/cats-videogames.jpg" alt="..."
+                    class='card-img-top'>
                 {{/if}}
                 <span class="detail-rating">
                     <img src="public/images/icons/ratings/{{videoGame.ESRBFileName}}" alt="">
@@ -19,9 +20,9 @@
                 {{#if sameOwner}}
                 {{else}}
                 {{#if videoGame.isAvailable}}
-                <button id='borrow-video-game' class="btn btn-success" data-id="{{videoGame.id}}">Borrow</button>
+                <button id='borrow-video-game' class="btn btn-success btn-sm" data-id="{{videoGame.id}}">Borrow</button>
                 {{else}}
-                <button id='borrow-video-game' class="btn btn-outline-success" disabled
+                <button id='borrow-video-game' class="btn btn-outline-warning btn-sm" disabled
                     data-id="{{videoGame.id}}">Already borrowed</button>
                 {{/if}}
                 {{/if}}
@@ -33,16 +34,19 @@
         <div class='card-footer'>
             <button id='cancel-video-game' class="btn btn-outline-danger" data-id="{{videoGame.id}}">Back</button>
             <span class='detail-owner'>
-                {{#if videoGame.owner.hasFullName}}
-                {{videoGame.owner.fullName}}
-                {{else}}
-                {{videoGame.owner.userName}}
+                <span class='game-owner-name'>
+                    {{#if videoGame.owner.hasFullName}}
+                    {{videoGame.owner.fullName}}
+                    {{else}}
+                    {{videoGame.owner.userName}}
+                    {{/if}}
+                </span>
+                {{#if sameOwner}}
+                <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video
+                    Game!</button>
+                <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
                 {{/if}}
             </span>
-            {{#if sameOwner}}
-            <button id='delete-video-game' class="btn btn-danger" data-id="{{videoGame.id}}">Delete Video Game!</button>
-            <button id='update-game-button' class="btn btn-info" data-id="{{videoGame.id}}">Update</button>
-            {{/if}}
         </div>
     </div>
 </section>
