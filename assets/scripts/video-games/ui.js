@@ -3,6 +3,7 @@ const showVideoGamesTemplate = require('../templates/handlebars/video-games/vide
 const showVideoGameDetails = require('../templates/handlebars/video-games/video-game-details.handlebars')
 const videoGameForm = require('../templates/handlebars/video-games/video-game-form.handlebars')
 const refreshEvents = require('./refresh-events')
+const dropdownSearch = require('../../../lib/dropdown-search')
 
 // Show all video games
 const showAllGamesSuccess = function (response) {
@@ -13,6 +14,9 @@ const showAllGamesSuccess = function (response) {
     $('#message').text('All game listings!').removeClass('error')
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
+    for (let i in response.videoGames){
+        $(`[data-img=${response.videoGames[i].id}]`).css({ 'background-image': `url(${response.videoGames[i].poster})`, 'object-fit': 'contain' })
+    }
     $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
     $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
@@ -86,6 +90,11 @@ const showUpdateGameForm = function () {
     const updateVideoGameForm = videoGameForm({gameInfo: store.currentGame})
     $('#message').text(`Lets update ${store.currentGame.title}!`).removeClass('error')
     $('#update-video-game').append(updateVideoGameForm)
+    dropdownSearch.setSelectedIndex($('.video-game-rating'), store.currentGame.rating)
+    dropdownSearch.setSelectedIndex($('.video-game-platform'), store.currentGame.platform)
+    if(store.currentGame.isAvailable){
+        $('#check-on').attr('checked', 'checked')
+    }
     $('.video-game-display').hide()
 }
 // Successfully updated a  video game listing 

@@ -64,28 +64,3 @@
 </div>
 <button type="submit" class="btn btn-primary">Submit!</button>
 <a class="btn btn-danger" id='cancel-submit-button' role="button">Cancel</a>
-
-<script>
-    function setSelectedIndex(dropdown, selected) {
-        // Loop through all the items in drop down list
-        for (let i = 0; i < dropdown[0].options.length; i++) {
-            console.log('the option right now is ', dropdown[0].options[i].value)
-            console.log('the valsearch right now is ', selected)
-            if (dropdown[0].options[i].value === selected) {
-                // Item is found. Set its property and exit
-                dropdown[0].options[i].selected = true
-                console.log('found something ', dropdown[0].options[i])
-                break
-            }
-        }
-        console.log('this is valsearch ', selected)
-        return
-    }
-    // Select the correct drop down options from game data
-    setSelectedIndex($('.video-game-rating'), "{{gameInfo.rating}}")
-    setSelectedIndex($('.video-game-platform'), "{{gameInfo.platform}}")
-    // Select the correct availbility status from game data
-    "{{#if gameInfo.isAvailable}}"
-    $('#check-on').attr('checked', 'checked')
-    "{{/if}}"
-</script>
