@@ -1,5 +1,6 @@
 const store = require('../store')
 const videoGames = require('../video-games/events')
+const refreshEvents = require('../video-games/refresh-events')
 
 // Sign up and sign in functions
 const signUpSuccess = function () {
@@ -19,8 +20,8 @@ const signInSuccess = function (response) {
     $('.signin-view').hide()
     $('#signin').trigger('reset')
 }
-const signInFailure = function () {
-    $('#message').text('Could not log in.  Please try again.').addClass('error')
+const signInFailure = function (error) {
+    $('#message').text(`${error.responseJSON.message}.  Please try again.`).addClass('error')
 }
 // Functions to switch between signing up and signing in
 const signUpSwitch = function () {
@@ -52,35 +53,48 @@ const changePasswordSuccess = function () {
     $('.user-info-view, .change-password-view').hide()
     $('.new-game, .change-password-button, .video-game-display').show()
     $('#change-password').trigger('reset')
-    videoGames.onShowAllGames()
+    refreshEvents.onShowAllGames()
 }
 const changePasswordFailure = function () {
     $('#message').text('An error has occurred while attempting change your password.  Please try again.').addClass('error')
 }
 // Update user functions
-const updateUserSuccess = function () {
+const updateUserSuccess = function (response) {
     $('#message').text('User successfully updated!').removeClass('error')
+    store.user = response.user
     $('.user-info-view, .change-password-view').hide()
     $('.new-game, .change-password-button, .video-game-display').show()
     $('#change-password').trigger('reset')
-    videoGames.onShowAllGames()
+    refreshEvents.onShowAllGames()
 }
-const upDateUserFailure = function () {
-    $('#message').text('An error has occurred while attempting to update your user.  Please try again.').addClass('error')
+const updateUserFailure = function (error) {
+    $('#message').text(`${error.responseJSON.message}.  Please try again.`).addClass('error')
 }
-// Switch back to previous view before attempting to change password
+// Switches to change password view
 const changePasswordSwitch = function () {
     $('#message').text('Update your password.').removeClass('error')
-    $('.update-video-game-view, .create-video-game-view, .change-password-button, .video-game-display, .update-user-view, .show-user-listings').hide()
+    $('.update-video-game-view, .create-video-game-view, .change-password-button, .video-game-display, .user-info-view, .show-user-listings').hide()
     $('.change-password-view, .new-game-button, .user-info-button, .show-all-listings').show()
-    $('#create-video-game, #update-video-game').trigger('reset')
+    $('#update-video-game, #change-password, #update-user, #update-user').trigger('reset')
+    $('.video-game-view').empty()
+}
+// Switches to user settings view
+const userSettingsSwitch = function () {
+    $('#message').text('Update your user settings.').removeClass('error')
+    $('.update-video-game-view, .create-video-game-view, .user-info-button, .video-game-display, .show-user-listings, .change-password-view').hide()
+    $('.user-info-view, .new-game-button, .change-password-button, .show-all-listings').show()
+    $('#update-video-game, #change-password, #update-user, #update-user').trigger('reset')
+    $('#update-user #update-email').val(store.user.email)
+    $('#update-user #update-first').val(store.user.firstName)
+    $('#update-user #update-last').val(store.user.lastName)
+    $('#update-user #update-username').val(store.user.userName)
     $('.video-game-view').empty()
 }
 const changePasswordCancel = function () {
-    $('#change-password').trigger('reset')
+    $('#change-password, #update-user').trigger('reset')
     $('.user-info-view, .change-password-view').hide()
-    $('.new-game, .change-password-button, .video-game-display').show()
-    videoGames.onShowAllGames()
+    $('.new-game, .change-password-button, .video-game-display .user-info-button').show()
+    refreshEvents.onShowAllGames()
 
 }
 
@@ -93,10 +107,11 @@ module.exports = {
     signInSwitch,
     logoutFailure,
     logoutSuccess,
-    upDateUserFailure,
+    updateUserFailure,
     updateUserSuccess,
     changePasswordFailure,
     changePasswordSuccess,
     changePasswordSwitch,
+    userSettingsSwitch,
     changePasswordCancel,
 }

@@ -26,6 +26,7 @@ $(() => {
   $('.change-password-button').on('click', authEvents.onChangePasswordSwitch) // Changes to the change password screen
   $('#change-password').on('submit', authEvents.onChangePassword) // Actually changes password
   $('.cancel-change-button').on('click', authEvents.onChangePasswordCancel) // Cancels out of change password screen
+  $('.user-info-button').on('click', authEvents.onUpdateUserSwitch) // Changes to user settings
 
   // Video game event listeners
   $('.new-game-button').on('click', videoGameEvents.onCreateGameForm) // Changes to create game listing form
@@ -33,6 +34,7 @@ $(() => {
   $('.show-user-listings').on('click', videoGameEvents.onShowUserGames) // Gets video game listings that belong to a certain user
   $('#create-video-game').on('submit', videoGameEvents.onCreateVideoGame)
   $('#update-video-game').on('submit', videoGameEvents.onUpdateVideoGame)
+  
   // Handlebar video game event listeners
   $('.video-game-view').on('click', '.video-game-section', videoGameEvents.onDetailVideoGame)
   $('.video-game-view').on('click', '#delete-video-game', videoGameEvents.onDeleteVideoGame)

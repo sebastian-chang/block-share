@@ -54,6 +54,11 @@ const onChangePasswordSwitch = function (event) {
     event.preventDefault()
     ui.changePasswordSwitch()
 }
+// Switches views to user settings 
+const onUpdateUserSwitch = function (event) {
+    event.preventDefault()
+    ui.userSettingsSwitch()
+}
 // Cancel function incase user didn't want to change password
 const onChangePasswordCancel = function (event) {
     event.preventDefault()
@@ -69,5 +74,6 @@ module.exports = {
     onChangePassword,
     onUpdateUser,
     onChangePasswordSwitch,
+    onUpdateUserSwitch,
     onChangePasswordCancel,
 }

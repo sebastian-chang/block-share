@@ -31,7 +31,7 @@
           <a class="nav-link logged-in show-all-listings" role='button'>Show All Listings</a>
         </li>
         <li class="nav-item d-lg-none">
-          <a class='nav-link logged-in user-info-button' role="button">User information</a>
+          <a class='nav-link logged-in user-info-button' role="button">User Settings</a>
         </li>
         <li class="nav-item d-lg-none">
           <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
@@ -48,12 +48,11 @@
           <div class='dropdown d-none d-lg-block'>
             <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <!-- <span class='navbar-toggler-icon' id='account-span'></span> -->
               <i class="fas fa-user-astronaut"></i>
             </a>
             <ul class='dropdown-menu dropdown-menu-right'>
               <li class="nav-item">
-                <a class='nav-link logged-in user-info-button' role="button">User settings</a>
+                <a class='nav-link logged-in user-info-button' role="button">User Settings</a>
               </li>
               <li class="nav-item">
                 <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
@@ -73,9 +72,7 @@
   </nav>
   <!-- Jumbo banner -->
   <div class="container message-board text-center">
-    <!-- <div class="jumbotron jumbotron-fluid text-center container"> -->
       <p class='' id='message'><br></p>
-    <!-- </div> -->
   </div>
 
   <!-- Signup view -->
@@ -136,24 +133,33 @@
   <!-- User settings view -->
   <div class='user-info-view container'>
     <form id='update-user'>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="user[email]" placeholder="Please enter your email">
+      <div class="form-field">
+        <label for="email" class='form-input'>
+          <input id='update-email' type="email" class="form-input" name="user[email]" placeholder=" ">
+          <span class='label'>Email</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="first-name">First Name</label>
-        <input type="text" class="form-control" name="user[firstName]" placeholder="Please enter your first name">
+      <div class="form-field">
+        <label for="first-name" class='form-input'>
+          <input id='update-first' type="text" class="form-input" name="user[firstName]" placeholder=" ">
+          <span class='label'>First Name</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="last-name">Last Name</label>
-        <input type="text" class="form-control" name="user[lastName]" placeholder="Please enter your last name">
+      <div class="form-field">
+        <label for="last-name" class='form-input'>
+          <input id='update-last' type="text" class="form-input" name="user[lastName]" placeholder=" ">
+          <span class='label'>Last Name</span>
+        </label>
       </div>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" name="user[userName]" placeholder="Please enter your first name">
+      <div class="form-field">
+        <label for="username" class='form-input'>
+          <input id='update-username' type="text" class="form-input" name="user[userName]" placeholder=" ">
+          <span class='label'>Username</span>
+          <span class='helper'>Please select a username</span>
+        </label>
       </div>
-      <button type="submit" class="btn btn-primary">Update user</button>
-      <a class="btn btn-danger cancel-change-button" role="button">Cancel</a>
+      <button type="submit" class="btn btn-primary btn-sm">Update user</button>
+      <a class="btn btn-danger cancel-change-button btn-sm" role="button">Cancel</a>
     </form>
   </div>
   <!-- Change password view -->
@@ -161,13 +167,13 @@
     <form id='change-password'>
       <div class="form-field">
         <label for="old-password" class='form-input'>
-          <input type="password" class="form-input" name="passwords[old]" placeholder=" ">
+          <input type="password" class="form-input" name="passwords[old]" placeholder=" " required>
           <span class='label'>Old Password</span>
         </label>
       </div>
       <div class="form-field">
         <label for="new-password" class='form-input'>
-          <input type="password" class="form-input" name="passwords[new]" placeholder=" ">
+          <input type="password" class="form-input" name="passwords[new]" placeholder=" " required>
           <span class='label'>New Password</span>
         </div>
           <button type="submit" class="btn btn-primary btn-sm">Change password</button>

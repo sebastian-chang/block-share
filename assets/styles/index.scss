@@ -24,7 +24,6 @@ body {
     }
     .navbar-brand,
     .navbar-nav .nav-link {
-        // font-size: 1.5rem;
         color: var(--bb-color-rat-race-gold);
         text-shadow: 1px 1px var(--bb-color-bright-yellow-low-contrast);
         &.nav-link:hover {
@@ -82,6 +81,5 @@ body {
 .message-board {
     margin-top: 55px;
     font-size: 1.5rem;
-    // height: 300px;
     color: var(--bb-color-rat-race-gold)
 }

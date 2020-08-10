@@ -11,7 +11,10 @@ const showAllGamesSuccess = function (response) {
     const showVideoGamesHTML = showVideoGamesTemplate({ videoGames: store.videoGames })
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
-    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
+    for (let i in store.videoGames) {
+        $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
+    }
+    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button, .user-info-button').show()
     $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
 const showAllGamesFailure = function () {
@@ -26,7 +29,10 @@ const showUserGamesSuccess = function (response) {
     $('#message').text('All your game listings!').removeClass('error')
     $('.video-game-view, #create-video-game, #update-video-game').empty()
     $('.video-game-view').append(showVideoGamesHTML)
-    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
+    for (let i in store.videoGames) {
+        $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
+    }
+    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button, .user-info-button').show()
     $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
 const showUserGamesFailure = function () {

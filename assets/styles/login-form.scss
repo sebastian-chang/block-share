@@ -1,10 +1,7 @@
 .signup-view,
 .signin-view,
 .change-password-view,
-.user-settings-view {
-    // font-family: 'Spartan', sans-serif;
-    // font-size: 12px;
-    // font-family: "Raleway", sans-serif;
+.user-info-view {
     font-size: 13px;
     margin-top: 30px;
     border: 1px solid whitesmoke;
@@ -30,7 +27,6 @@
         font-size: 1.0625rem;
         padding-left: 0.875rem;
         padding-top: 0.825rem;
-        /* padding-bottom: 0.5rem; */
     }
     .form-input,
     select,

@@ -15,7 +15,6 @@
                     <img src="public/images/icons/ratings/{{videoGame.ESRBFileName}}" alt="">
                 </span>
             </div>
-            <div class='detail-info'>
                 {{#if sameOwner}}
                 {{else}}
                 {{#if videoGame.isAvailable}}
@@ -25,6 +24,7 @@
                     data-id="{{videoGame.id}}">Already borrowed</button>
                 {{/if}}
                 {{/if}}
+            <div class='detail-info col-sm-6'>
                 <h3>{{videoGame.title}}</h3>
                 <h6>{{videoGame.studio}}</h6>
                 <p>{{videoGame.description}}</p>

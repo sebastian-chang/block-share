@@ -18,7 +18,7 @@ const showAllGamesSuccess = function (response) {
     for (let i in store.videoGames){
         $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
     }
-    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button').show()
+    $('.show-user-listings, .video-game-display, .new-game-button, .change-password-button, .user-info-button').show()
     $('.show-all-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
 const showAllGamesFailure = function () {
@@ -37,7 +37,7 @@ const showUserGamesSuccess = function (response) {
     for (let i in store.videoGames) {
         $(`[data-img=${store.videoGames[i].id}]`).css({ 'background-image': `url(${store.videoGames[i].poster})`, 'object-fit': 'contain' })
     }
-    $('.show-all-listings, .video-game-display, .new-game-button, .change-password-button').show()
+    $('.show-all-listings, .video-game-display, .new-game-button, .change-password-button, .user-info-button').show()
     $('.show-user-listings, .change-password-view, .user-info-view, .update-video-game-view, .create-video-game-view').hide()
 }
 const showUserGamesFailure = function () {
@@ -67,9 +67,8 @@ const borrowVideoGame = function () {
 const showCreateGameForm = function () {
     $('#message').text('Lets create a new video game posting!').removeClass('error')
     $('.create-video-game-view, .change-password-button, .user-info-button, .show-all-listings').show()
-    $('#update-video-game, #change-password').trigger('reset')
-    $('#update-video-game').empty()
-    $('#create-video-game').empty()
+    $('#update-video-game, #change-password, #update-user, #update-user').trigger('reset')
+    $('#update-video-game, #create-video-game').empty()
     $('#create-video-game').append(videoGameForm)
     $('.video-game-display, .user-info-view, .change-password-view, .new-game-button, .show-user-listings').hide()
 }
