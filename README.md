@@ -57,6 +57,6 @@ With this application you can search video game postings in your neighborhood.  
 
 #### Wireframe:
 
-![wireframe](https://git.generalassemb.ly/sebastian-chang/full-stack-project-practice/blob/response/images/Block-Borrow-Wireframe.jpg)
+![wireframe](https://github.com/sebastian-chang/block-share/blob/master/public/images/Block-Share-Wireframe.jpg)
 
 ---
