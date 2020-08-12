@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Block Share</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class='container'>
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
+    <span class="navbar-brand">Block Share</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item d-lg-none">
+          <a class="nav-link logged-in show-user-listings" role='button'>Show My Listings</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class="nav-link logged-in show-all-listings" role='button'>Show All Listings</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in user-info-button' role="button">User Settings</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in new-game-button' role="button">Create New Game</a>
+        </li>
+        <li class="nav-item d-lg-none">
+          <a class='nav-link logged-in logout-button' role="button">Logout</a>
+        </li>
+        <a class="nav-link logged-in show-user-listings" role='button'>Show My Listings</a>
+        <a class="nav-link logged-in show-all-listings" role='button'>Show All Listings</a>
+        <li>
+          <div class='dropdown d-none d-lg-block'>
+            <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user-astronaut"></i>
+            </a>
+            <ul class='dropdown-menu dropdown-menu-right'>
+              <li class="nav-item">
+                <a class='nav-link logged-in user-info-button' role="button">User Settings</a>
+              </li>
+              <li class="nav-item">
+                <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
+              </li>
+              <li class="nav-item">
+                <a class='nav-link logged-in new-game-button' role="button">Create New Game</a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li class="nav-item">
+                <a class='nav-link logged-in logout-button' role="button">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Jumbo banner -->
+  <div class="container message-board text-center">
+      <p class='' id='message'><br></p>
+  </div>
+
+  <!-- Signup view -->
+  <div class='signup-view container'>
+    <form id='signup'>
+      <div class="form-field">
+        <label for="signup-email" class='form-input'>
+          <input type="email" class="form-input" name="credentials[email]"
+          placeholder=" ">
+          <span class='label'>Email</span>
+          <span class='helper'>Enter your email address</span>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="signup-password" class='form-input'>
+
+          <input type="password" class="form-input" name="credentials[password]"
+          placeholder=" ">
+          <span class='label'>Password</span>
+          <span class='helper'>Enter your password</span>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="signup-password" class='form-input'>
+          <input type="password" class="form-input" name="credentials[password_confirmation]"
+          placeholder=" ">
+          <span class='label'>Confirm Password</span>
+          <span class='helper'>Re-enter your password</span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Sign up!</button>
+      <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
+    </form>
+  </div>
+
+  <!-- Signin view -->
+  <div class='signin-view container'>
+    <form id='signin'>
+      <div class="form-field">
+        <label for="signin-email" class='form-input'>
+          <input type="text" class="form-input" name="credentials[email]" placeholder=" " required>
+          <span class='label'>Email</span>
+          <!-- <span class='helper'>Type in your email address here. Going to keep adding text. Maybe some more?</span> -->
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="signin-password" class='form-input'>
+          <input type="password" class="form-input" name="credentials[password]"
+          placeholder=" ">
+          <span class='label'>Password</span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Sign in!</button>
+      <a class="btn btn-sm btn-outline-info" id='signup-button' role="button">Sign up</a>
+    </form>
+  </div>
+
+  <!-- User settings view -->
+  <div class='user-info-view container'>
+    <form id='update-user'>
+      <div class="form-field">
+        <label for="email" class='form-input'>
+          <input id='update-email' type="email" class="form-input" name="user[email]" placeholder=" ">
+          <span class='label'>Email</span>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="first-name" class='form-input'>
+          <input id='update-first' type="text" class="form-input" name="user[firstName]" placeholder=" ">
+          <span class='label'>First Name</span>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="last-name" class='form-input'>
+          <input id='update-last' type="text" class="form-input" name="user[lastName]" placeholder=" ">
+          <span class='label'>Last Name</span>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="username" class='form-input'>
+          <input id='update-username' type="text" class="form-input" name="user[userName]" placeholder=" ">
+          <span class='label'>Username</span>
+          <span class='helper'>Please select a username</span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Update user</button>
+      <a class="btn btn-danger cancel-change-button btn-sm" role="button">Cancel</a>
+    </form>
+  </div>
+  <!-- Change password view -->
+  <div class='change-password-view container'>
+    <form id='change-password'>
+      <div class="form-field">
+        <label for="old-password" class='form-input'>
+          <input type="password" class="form-input" name="passwords[old]" placeholder=" " required>
+          <span class='label'>Old Password</span>
+        </label>
+      </div>
+      <div class="form-field">
+        <label for="new-password" class='form-input'>
+          <input type="password" class="form-input" name="passwords[new]" placeholder=" " required>
+          <span class='label'>New Password</span>
+        </div>
+          <button type="submit" class="btn btn-primary btn-sm">Change password</button>
+          <a class="btn btn-danger cancel-change-button btn-sm" role="button">Cancel</a>
+        </label>
+    </form>
+  </div>
+
+  <!-- Video games view -->
+  <div class="video-game-display container col-lg-10">
+    <div class='video-game-view row justify-contend-lg-center'></div>
+  </div>
+
+  <!-- Create a new video game form -->
+  <div class='create-video-game-view container col-lg-12'>
+    <form id='create-video-game' class='row'>
+    </form>
+  </div>
+
+  <!-- Update a video game form -->
+  <div class='update-video-game-view container'>
+    <form id='update-video-game' class='row'>
+    </form>
+  </div>
+</body>
+
+</html>
